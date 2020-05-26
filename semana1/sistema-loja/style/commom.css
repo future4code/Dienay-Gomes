@@ -4,20 +4,28 @@
     padding: 0;
 }
 
+html {
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
 a {
     text-decoration: none;
+    font-weight: bold;
 }
 
 li {
     border: 3px solid #ffffff;
     border-radius: 10px;
-    margin: 10px 2em;
     list-style: none;
     padding: 1.3em 1em;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     text-align: center;
 }
 
@@ -29,9 +37,18 @@ header {
 }
 
 .menu ul {
-    padding-top: 35vh;
+    padding-top: 30vh;
 }
 
 .middle {
     height: 100vh;
+}
+
+.middle section {
+    height: 90vh;
+}
+
+footer {
+    border-top: 1px solid rgba(177, 221, 240, .6);
+    padding-top: 1em;
 }

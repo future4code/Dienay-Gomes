@@ -1,0 +1,13 @@
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+tr {
+    background-origin: 1px solid #b1ddf0;
+}
+
+figure img {
+    width: 140px;
+    height: 110px;
+}
