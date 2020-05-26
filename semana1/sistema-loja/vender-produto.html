@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buginganga Store</title>
     <link rel="stylesheet" href="./style/commom.css">
-    <link rel="stylesheet" href="./style/home.css">
+    <link rel="stylesheet" href="./style/vender-produto.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Righteous&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -13,13 +13,13 @@
         <nav class="menu">
             <ul>
                 <li>
-                    <a href="#">HOME</a>
+                    <a href="./index.html">HOME</a>
                 </li>
                 <li>
                     <a href="controle-de-estoque.html">PRODUTOS</a>
                 </li>
                 <li>
-                    <a href="add-produto.html">ADD PRODUTO</a>
+                    <a href="#">ADD PRODUTO</a>
                 </li>
                 <li>
                     <a href="./vender-produto.html">VENDER PRODUTO</a>
@@ -30,17 +30,28 @@
             </ul>
         </nav>
     </header>
-    
     <div class="middle">
         <section>
-            <h1>Buginganga Store</h1>
-            <p>A escolha certa quando você está procurando por tranqueiras :)</p>
-            <p>Seja bem vindo(a)!</p>
+            <h1>Efetuar Venda</h1>
+            <form action="#">
+                <div>
+                    <label for="item">Item</label>
+                    <input type="text" name="item" id="item">
+                </div>
+                <div>
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" name="quantidade" id="quantidade" >
+                </div>
+                <div>
+                    <label for="valor">Valor</label>
+                    <input type="number" name="valor" id="valor" >
+                </div>
+                <button type="submit">Adicionar</button>
+            </form>
         </section>
         <footer>
             <p>Suporte</p>
         </footer>
     </div>
-    
 </body>
 </html>
