@@ -9,5 +9,18 @@ tr {
 
 figure img {
     width: 140px;
-    height: 110px;
+    height: 105px;
+}
+
+figure {
+    margin-bottom: 10px;
+}
+
+table td {
+    border-bottom: 1px solid #b1ddf0;
+}
+
+table td,
+table th {
+    padding-left: 5em;
 }

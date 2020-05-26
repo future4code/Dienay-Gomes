@@ -19,7 +19,7 @@
                     <a href="controle-de-estoque.html">PRODUTOS</a>
                 </li>
                 <li>
-                    <a href="#">SEU PEDIDO</a>
+                    <a href="#">ADD PRODUTO</a>
                 </li>
                 <li>
                     <a href="funcionarios.html">NOSSO TIME</a>
@@ -31,20 +31,31 @@
         <section>
             <h1>Faça o seu pedido aqui</h1>
             <form action="#">
-                <label for="item">Item</label>
-                <select name="item" id="">
-                    <option value="">Buginganga flutuante de vidro R$20,00 un.</option>
-                    <option value="">Buginganga em formato de comida R$10,00 un.</option>
-                    <option value="">Buginganga em formato de casa R$7,00 un</option>
-                    <option value="">Buginganga de zinco R$15,00</option>
-                </select>
-                <label for="quantidade">Quantidade</label>
-                <input type="number" name="quantidade" id="quantidade" >
-                <button type="submit">Comprar</button>
+                <div>
+                    <label for="item">Item</label>
+                    <input type="text" name="item" id="item">
+                </div>
+                <div>
+                    <label for="imagem">Imagem do produto</label>
+                    <input type="file" name="imagen" id="imagem">
+                </div>
+                <div>
+                    <label for="descricao">Descrição do Item</label>
+                    <textarea name="descricao" id="descricao" cols="30" rows="5"></textarea>
+                </div>
+                <div>
+                    <label for="quantidade">Quantidade</label>
+                    <input type="number" name="quantidade" id="quantidade" >
+                </div>
+                <div>
+                    <label for="valor">Valor</label>
+                    <input type="number" name="valor" id="valor" >
+                </div>
+                <button type="submit">Adicionar</button>
             </form>
         </section>
         <footer>
-            <p>Contato</p>
+            <p>Suporte</p>
         </footer>
     </div>
 </body>

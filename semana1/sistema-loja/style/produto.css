@@ -1,0 +1,45 @@
+h1 {
+    padding: 2em;
+}
+
+.middle div {
+    margin-bottom: 1em;
+}
+
+form {
+    background-color: #b1ddf0;
+    border: 1px solid #b1ddf0;
+    border-radius: 16px;
+    margin-left: 40vw;
+    padding: 1em;
+    width: 600px;
+}
+
+label {
+    display: inline-block;
+    text-align: right;
+    width: 200px;
+}
+
+input, textarea {
+    border: 1px solid #999;
+    width: 300px;
+}
+
+input:focus, textarea:focus {
+    border-color: #000;
+}
+
+textarea {
+    vertical-align: top;
+    resize: vertical;
+}
+
+button {
+    background-color: #7694fb;
+    border-radius: 16px;
+    color: #000033;
+    font-weight: bold;
+    padding: 1em;
+    margin-top: 2em;
+}
