@@ -76,6 +76,11 @@ img {
 
 #container-de-descricao > div ol {
     padding: 15px 0px;
+    text-align: center;
+}
+
+#container-de-descricao > div li {
+    list-style-position: inside;
 }
 
 #container-para-comprar {
