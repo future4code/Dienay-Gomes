@@ -2,6 +2,10 @@ h1 {
     padding: 2em;
 }
 
+div p {
+    margin-bottom: .5em;
+}
+
 .middle div {
     margin-bottom: 1em;
 }
@@ -15,13 +19,13 @@ form {
     width: 600px;
 }
 
-label {
+.pre-venda label {
     display: inline-block;
     text-align: right;
     width: 200px;
 }
 
-input, textarea {
+.pre-venda input, textarea {
     border: 1px solid #999;
     width: 300px;
 }

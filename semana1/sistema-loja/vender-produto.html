@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buginganga Store</title>
+    <title>Buginganga Store - Vender Produto</title>
     <link rel="stylesheet" href="./style/commom.css">
     <link rel="stylesheet" href="./style/vender-produto.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Righteous&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
@@ -19,10 +19,13 @@
                     <a href="controle-de-estoque.html">PRODUTOS</a>
                 </li>
                 <li>
-                    <a href="#">ADD PRODUTO</a>
+                    <a href="./add-produto.html">ADD PRODUTO</a>
                 </li>
                 <li>
-                    <a href="./vender-produto.html">VENDER PRODUTO</a>
+                    <a href="#">VENDER PRODUTO</a>
+                </li>
+                <li>
+                    <a href="./hitórico.html">HISTÓRICO DE VENDAS</a>
                 </li>
                 <li>
                     <a href="funcionarios.html">NOSSO TIME</a>
@@ -32,21 +35,38 @@
     </header>
     <div class="middle">
         <section>
-            <h1>Efetuar Venda</h1>
+            <h1>Faça o seu pedido aqui</h1>
             <form action="#">
-                <div>
+                <div class="pre-venda">
                     <label for="item">Item</label>
-                    <input type="text" name="item" id="item">
+                    <select name="item" id="">
+                        <option value="">Buginganga flutuante de vidro R$20,00 un.</option>
+                        <option value="">Buginganga em formato de comida R$10,00 un.</option>
+                        <option value="">Buginganga em formato de casa R$7,00 un</option>
+                        <option value="">Buginganga de zinco R$15,00</option>
+                    </select>
                 </div>
-                <div>
+                <div class="pre-venda">
                     <label for="quantidade">Quantidade</label>
                     <input type="number" name="quantidade" id="quantidade" >
                 </div>
-                <div>
+                <div class="pre-venda">
                     <label for="valor">Valor</label>
                     <input type="number" name="valor" id="valor" >
                 </div>
-                <button type="submit">Adicionar</button>
+                <div>
+                    <p>Forma de pagamento</p>
+                    <div>
+                        <input type="radio" id="dinheiro" name="pagamento" value="dinheiro"
+                               checked>
+                        <label for="dinheiro">Dinheiro</label>
+                      </div>
+                      <div>
+                        <input type="radio" id="cartao" name="pagamento" value="cartao">
+                        <label for="cartao">Cartão</label>
+                      </div>
+                </div>
+                <button type="submit">Comprar</button>
             </form>
         </section>
         <footer>
