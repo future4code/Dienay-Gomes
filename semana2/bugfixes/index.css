@@ -20,7 +20,13 @@ h2 {
     text-align: center;
 }
 
+a,
+button {
+    outline: none;
+}
+
 input {
+    outline: none;
     height: 20px;
     width: 500px;
 }
