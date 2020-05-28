@@ -2,11 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 html {
     text-align: center;
-    font-size: 16px;
     color: white;
 }
 
@@ -22,32 +22,47 @@ header {
     
 .header {
     background-color: #2ECC40;
-    padding: .5em 5em;
+    padding: 1em;
+    width: 20%;
 }
 
 .menu {
     background-color: #FFDC00;
-    width: 100%;
+    width: 80%;
 }
 
 .content1 {
     background-color: #F012BE;
-    height: 50vh;
+    height: 55vh;
     width: 100%;
+}
+
+.bottomContent {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgExtra{
+    height: 30.5vh;
+    width: 25%;
 }
 
 .content2 {
     background-color: #0074D9;
+    width: 50%;
 }
 
 .img {
     background-color: #FF4136;
+    height: 50%;
 }
 
 .extra {
     background-color: #01FF70;
+    height: 50%;
 }
 
 footer {
     background-color: #B10DC9;
+    padding: 1em;
 }
