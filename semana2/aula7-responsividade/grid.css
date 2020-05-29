@@ -169,3 +169,20 @@
         grid-column: 1/7;
     }
 }
+
+@media screen and (max-width: 600px) {
+    .header {
+        background-color: red;
+        grid-column: 1/6;
+    }
+    
+    .menu {
+        display: none;
+    }
+    
+    .container {
+        grid-column: 1/6;
+        height: 100vh;
+        padding: 10px;
+    }
+}
