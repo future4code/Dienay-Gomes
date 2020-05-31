@@ -70,3 +70,22 @@
         display: initial;
     }
 }
+
+@media screen and (min-width : 800px) {
+    .solo {
+        width: 35%;
+    }
+
+    .pares {
+        width: 75%;
+    }
+
+    .trio {
+        display: flex;
+        width: 100%;
+    }
+
+    .escuro {
+        width: 100%;
+    }
+}
