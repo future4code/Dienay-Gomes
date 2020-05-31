@@ -53,3 +53,14 @@
     color: white;
     height: 300px;
 }
+
+@media screen and (min-width: 420px) {
+    .pares {
+        display: flex;
+        width: 100%;
+    }
+
+    .dupla {
+        width: 50%;
+    }
+}
