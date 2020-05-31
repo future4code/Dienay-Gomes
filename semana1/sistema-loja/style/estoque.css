@@ -1,0 +1,26 @@
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+tr {
+    background-origin: 1px solid #b1ddf0;
+}
+
+figure img {
+    width: 140px;
+    height: 105px;
+}
+
+figure {
+    margin-bottom: 10px;
+}
+
+table td {
+    border-bottom: 1px solid #b1ddf0;
+}
+
+table td,
+table th {
+    padding-left: 5em;
+}
