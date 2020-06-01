@@ -17,6 +17,37 @@ video {
     font-style: italic;
 }
 
-article {
-    width: 100%;
+@media screen and (max-width: 900px) {
+    video {
+        width: 65vw;
+    }
+}
+@media screen and (max-width: 800px) {
+    video {
+        width: 70vw;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    video {
+        width: 75vw;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    video {
+        width: 80vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    video {
+        width: 85vw;
+    }
+}
+
+@media screen and (max-width : 450px) {
+    video {
+        width: 100vw;
+    }
 }
