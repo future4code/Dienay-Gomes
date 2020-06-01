@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    align-items: center;
+    background-color: #f9b24e;
+    display: flex;
+    height: 12vh;
+    justify-content: space-between;
+    padding-left: 16px;
+    padding-right: 32px;
+}
+
+header input {
+    border: none;
+    padding: 8px;
+    width: 20%;
+}
+
+footer {
+    align-items: center;
+    background-color: #45525b;
+    bottom: 0;
+    color: white;
+    display: flex;
+    height: 12vh;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+}
