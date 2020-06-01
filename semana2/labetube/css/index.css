@@ -1,4 +1,23 @@
 video {
-    width: 100px;
+    max-width: 100%;
 }
 
+main {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+h4 {
+    padding: 8px;
+}
+
+article {
+    border: 1px solid #ffd190;
+    box-shadow: 2px 2px 5px #ffd190;
+}

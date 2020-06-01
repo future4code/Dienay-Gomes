@@ -8,13 +8,17 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-a {
-    text-decoration: none;
+main {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 32px 16px;
+    min-height: 76vh;
 }
 
 header {
     align-items: center;
-    background-color: #f9b24e;
+    background-color: #f47d1f;
+    box-shadow: 2px 1px 5px #8b5e1f;
     display: flex;
     height: 12vh;
     justify-content: space-between;
@@ -24,18 +28,18 @@ header {
 
 header input {
     border: none;
-    padding: 8px;
+    padding: 10px;
     width: 20%;
 }
 
 footer {
     align-items: center;
-    background-color: #45525b;
+    background-color: #f47d1f;
+    box-shadow: 2px -2px 5px #8b5e1f;
     bottom: 0;
     color: white;
     display: flex;
     height: 12vh;
     justify-content: center;
-    position: fixed;
     width: 100%;
 }
