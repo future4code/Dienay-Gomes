@@ -1,7 +1,3 @@
-//(KELVIN) = (GRAUS_FAHRENHEIT - 32)*5/9 + 273.15
-
-//(GRAUS_FAHRENHEIT) = (GRAUS_CELSIUS)*9/5 + 32
-
 // a. Calcule e mostre o valor de 77°F em  K, mostrando a unidade no console também.
 let fahrenheitA = 77
 let kelvinA = (fahrenheitA - 32) * 5 / 9 + 273.15
