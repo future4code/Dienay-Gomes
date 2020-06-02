@@ -53,12 +53,13 @@ console.log('VI. ', array[i])
 
 //VII.  1
 i = array.length - 1
-//variável i recebe valor do ultimo item do array
+//variável i recebe valor do tamanho do array - 1
 array[i] = array[i-3]
-//subtrai 3 do valor da variável i (3 - 13)
+//o valor da posição 10 recebe i - 3 (13 - 3)
 const resultadoC = array[i]%array[1]
-//
+//calcula o resto da divisão entre 10 e 3
 console.log('VII. ', resultadoC)
+//o resto da divisão entre 10 e 3 é igual a 1
 
 
 
