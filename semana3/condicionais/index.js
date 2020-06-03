@@ -146,6 +146,7 @@
 //EXERCÍCIO 5
 
 // a. Escreva o diagrama esquemático que melhor represente a árvore condicional do exercício. (Coloque a imagem do esquema no drive e gerem um link de compartilhamento público. Coloque este link num comentário durante a resolução deste exercício)
+
 //      https://drive.google.com/folderview?id=1zpUECNjAL4ELW50pejEgdR9SUxVNgZLX
 
 // b. Escreva um programa que realize estas perguntas  e indique a classificação final considerada. As opções são: ser humano; mamífero não humano; ave; réptil; anfíbio; peixe ou é invertebrado
