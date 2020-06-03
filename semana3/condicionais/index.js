@@ -74,3 +74,40 @@
 
 
 
+// Exercícios de escrita de código
+// EXERCÍCIO 4
+
+// a. Crie um programa que receba dois números do usuário através do `prompt` e imprima-os na ordem **decrescente**. O que acontece com o seu programa se os 2 números forem iguais? (é só testar e colocar um comentário descrevendo o que aconteceu)
+
+// let primeiroNumero = Number(prompt("Digite o primeiro número"))
+// let segundoNumero = Number(prompt("Digite o segundo número"))
+
+// if (primeiroNumero > segundoNumero ) {
+//     console.log(" A ordem decrescente é: ", primeiroNumero,',', segundoNumero)
+// } else if (primeiroNumero < segundoNumero ){
+//     console.log(" A ordem decrescente é: ", segundoNumero,',', primeiroNumero)
+// } else {
+//     console.log("Os números", primeiroNumero, " e ", segundoNumero, "são iguais")
+// }
+
+// funcionou normalmente, não deu erro. Porém não tinha nada sinalizando que os números eram iguais, então acrescentei outro if e else
+
+
+// b. Adapte o programa para que o usuário digite 3 números. Ainda os imprima na ordem **decrescente**. O que acontece como seu programa se os 3 números forem iguais? (é só testar e colocar um comentário descrevendo o que aconteceu)
+
+// let primeiroNumero = Number(prompt("Digite o primeiro número"))
+// let segundoNumero = Number(prompt("Digite o segundo número"))
+// let terceiroNumero = Number(prompt("Digite o terceiro número"))
+
+// if ((primeiroNumero > segundoNumero ) && (primeiroNumero> terceiroNumero)) {
+// } 
+
+// else if ((segundoNumero > primeiroNumero) && (segundoNumero > terceiroNumero )){
+// } 
+
+// else if ((terceiroNumero > primeiroNumero) && (terceiroNumero > segundoNumero )){
+// }
+
+//console.log("Os números", primeiroNumero, " e ", segundoNumero, "são iguais")
+// c. Agora, impeça que o usuário digite 3 números iguais. Caso todos sejam iguais, mostre um aviso ao usuário indicando que ele deve, ao menos, inserir um número diferente.
+
