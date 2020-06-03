@@ -79,15 +79,15 @@
 
 // a. Crie um programa que receba dois números do usuário através do `prompt` e imprima-os na ordem **decrescente**. O que acontece com o seu programa se os 2 números forem iguais? (é só testar e colocar um comentário descrevendo o que aconteceu)
 
-// let primeiroNumero = Number(prompt("Digite o primeiro número"))
-// let segundoNumero = Number(prompt("Digite o segundo número"))
+// let numero1 = Number(prompt("Digite o primeiro número"))
+// let numero2 = Number(prompt("Digite o segundo número"))
 
-// if (primeiroNumero > segundoNumero ) {
-//     console.log(" A ordem decrescente é: ", primeiroNumero,',', segundoNumero)
-// } else if (primeiroNumero < segundoNumero ){
-//     console.log(" A ordem decrescente é: ", segundoNumero,',', primeiroNumero)
+// if (numero1 > numero2 ) {
+//     console.log(" A ordem decrescente é: ", numero1,',', numero2)
+// } else if (numero1 < numero2 ){
+//     console.log(" A ordem decrescente é: ", numero2,',', numero1)
 // } else {
-//     console.log("Os números", primeiroNumero, " e ", segundoNumero, "são iguais")
+//     console.log("Os números", numero1, " e ", numero2, "são iguais")
 // }
 
 // funcionou normalmente, não deu erro. Porém não tinha nada sinalizando que os números eram iguais, então acrescentei outro if e else
@@ -95,19 +95,58 @@
 
 // b. Adapte o programa para que o usuário digite 3 números. Ainda os imprima na ordem **decrescente**. O que acontece como seu programa se os 3 números forem iguais? (é só testar e colocar um comentário descrevendo o que aconteceu)
 
-// let primeiroNumero = Number(prompt("Digite o primeiro número"))
-// let segundoNumero = Number(prompt("Digite o segundo número"))
-// let terceiroNumero = Number(prompt("Digite o terceiro número"))
+//Quando digito números iguais aparece zero no lugar dos números
 
-// if ((primeiroNumero > segundoNumero ) && (primeiroNumero> terceiroNumero)) {
-// } 
 
-// else if ((segundoNumero > primeiroNumero) && (segundoNumero > terceiroNumero )){
-// } 
+// let numero1 = Number(prompt("Digite o primeiro número"))
+// let numero2 = Number(prompt("Digite o segundo número"))
+// let numero3 = Number(prompt("Digite o terceiro número"))
 
-// else if ((terceiroNumero > primeiroNumero) && (terceiroNumero > segundoNumero )){
+// let maior = 0
+// let medio = 0 
+// let menor = 0
+
+// //maiores
+// if ((numero1 > numero2 ) && (numero1 > numero3)) {
+//     maior = numero1
+// } else if ((numero2 > numero1) && (numero2 > numero3 )){
+//     maior = numero2 
+// } else if ((numero3 > numero1) && (numero3 > numero2 )){
+//     maior = numero3 
 // }
 
-//console.log("Os números", primeiroNumero, " e ", segundoNumero, "são iguais")
+// //médios
+// if ((numero1 > numero2 ) && (numero1 < numero3) || (numero1 < numero2 ) && (numero1 > numero3)) {
+//     medio = numero1
+// } else if ((numero2 > numero1) && (numero2 < numero3 ) || (numero2 < numero1 ) && (numero2 > numero3)){
+//     medio = numero2 
+// } else if ((numero3 > numero1) && (numero3 < numero2 ) || (numero3 < numero1 ) && (numero3 > numero2)){
+//     medio = numero3
+// }
+
+// //menores
+// if ((numero1 < numero2 ) && (numero1 < numero3)) {
+//     menor = numero1
+// } else if ((numero2 < numero1) && (numero2 < numero3 )){
+//     menor = numero2
+// } else if ((numero3 < numero1) && (numero3 < numero2 )){
+//     menor = numero3
+// }
+
+// console.log(" A ordem decrescente é: ", maior,',', medio,',', menor)
+
+//console.log("Os números", numero1, " e ", numero2, "são iguais")
 // c. Agora, impeça que o usuário digite 3 números iguais. Caso todos sejam iguais, mostre um aviso ao usuário indicando que ele deve, ao menos, inserir um número diferente.
+
+// if (numero1 === numero2 && numero1 === numero3) {
+//     console.log("Por favor, digite números diferentes uns dos outros")
+// }
+
+
+//EXERCÍCIO 5
+
+// a. Escreva o diagrama esquemático que melhor represente a árvore condicional do exercício. (Coloque a imagem do esquema no drive e gerem um link de compartilhamento público. Coloque este link num comentário durante a resolução deste exercício)
+//      https://drive.google.com/folderview?id=1zpUECNjAL4ELW50pejEgdR9SUxVNgZLX
+
+// b. Escreva um programa que realize estas perguntas  e indique a classificação final considerada. As opções são: ser humano; mamífero não humano; ave; réptil; anfíbio; peixe ou é invertebrado
 
