@@ -44,21 +44,29 @@
 // EXERCÍCIO 3
 
 // a. Escreva um programa que devolva o maior e o menor números contidos no array original
-const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-let maior = 0
-let menor = 1000
+// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// let maior = 0
+// let menor = 1000
 
-for (let i = 0; i <= array.length; i++) {
-    let numero = array[i]
-    if (numero > maior) {
-        maior = numero
-    } else if (numero < menor) {
-        menor = numero
-    }
-}
-console.log("Esse é o menor número ", menor)
-console.log("Esse é o maior número ", maior)
+// for (let i = 0; i <= array.length; i++) {
+//     let numero = array[i]
+//     if (numero > maior) {
+//         maior = numero
+//     } else if (numero < menor) {
+//         menor = numero
+//     }
+// }
+// console.log("Esse é o menor número ", menor)
+// console.log("Esse é o maior número ", maior)
 
 // b. Escreva um programa que devolva um novo array contendo todos os valores do array original divididos por 10.
+const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+let novoArray = []
+
+for (const item of array) {    
+    novoArray.push(item/10)
+}
+console.log(novoArray)
+
 // c. Escreva um programa que devolva um novo array contendo, somente, os números pares do array original.
 // d. Escreva um programa que gere um novo array contendo strings, da seguinte forma: "O elemento do índex i é: numero"
