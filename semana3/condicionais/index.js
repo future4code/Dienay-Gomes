@@ -8,7 +8,7 @@
 
 // const respostaDoUsuario = prompt ( "Digite o número que você deseja testar?" )
 // const número = número ( respostaDoUsuario ) 
- 
+
 
 // if ( numero % 2 === 0 ) { 
 //   console . log ( "Passou no teste." ) } else { 
@@ -50,7 +50,7 @@
 
 // d. Considere que um usuário queira comprar uma Pêra, qual seria a mensagem impressa no console se retirássemos o break que está logo acima do deafult (o break indicado pelo comentário "BREAK PARA O ITEM d.")?
 //      O preço da fruta  Pêra  é  R$  5, porque o break é quem faz sair da execução
- 
+
 
 //EXERCÍCIO 3
 
@@ -151,3 +151,43 @@
 
 // b. Escreva um programa que realize estas perguntas  e indique a classificação final considerada. As opções são: ser humano; mamífero não humano; ave; réptil; anfíbio; peixe ou é invertebrado
 
+let bicho = Number(prompt("Digite 1, se a criatura que você procura é um vertebrado e digite 2 para invertebrado"))
+let escolha = 0
+
+if (bicho === 2) {
+    console.log("A criatura é um invertebrado")
+
+} else{
+    escolha = Number(prompt("Digite 1, se a criatura que você procura é um mamífero, se não é, digite 2"))
+    if (escolha === 1) {
+        escolha = Number(prompt("Digite 1, se essa criatura possui pelos, se não é, digite 2"))
+        if (escolha === 1) {
+            escolha = Number(prompt("Digite 1, se essa criatura é um bipede, se não é, digite 2"))
+            if (escolha === 1){
+                console.log("A criatura é um humano")
+            } else {
+                console.log("A criatura não é um humano")
+            }
+        } else {
+            console.log("A criatura é um golfinho")
+        }
+    } else {
+        escolha = Number(prompt("Digite 1, se essa criatura possui penas, se não é, digite 2"))
+        if (escolha === 1) {
+            console.log("A criatura é uma ave")
+        } else {
+            escolha = Number(prompt("Digite 1, se essa criatura possui escamas, se não é, digite 2"))
+            if (escolha === 1) {
+                escolha = Number(prompt("Digite 1, se essa criatura é aquatica, se não é, digite 2"))
+                if (escolha === 1) {
+                    console.log("A criatura é um peixe")
+                } else {
+                    console.log("A criatura é um réptil")
+                }
+            } else {
+                console.log("A criatura é um anfíbio")
+            }
+        }
+    }
+    
+}
