@@ -69,16 +69,22 @@
 // console.log(novoArray)
 
 // c. Escreva um programa que devolva um novo array contendo, somente, os números pares do array original.
-const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-let novoArray = []
+// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// let novoArray = []
 
-for (const item of array) {
-    if (item % 2 === 0){
-        novoArray.push(item)
-    }
-}
+// for (const item of array) {
+//     if (item % 2 === 0){
+//         novoArray.push(item)
+//     }
+// }
 
-console.log(novoArray)
+// console.log(novoArray)
 
 
 // d. Escreva um programa que gere um novo array contendo strings, da seguinte forma: "O elemento do índex i é: numero"
+const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+let novoArray = []
+
+for (let i = 0; i < array.length; i++) {
+    console.log(`O elemento do índex ${array[i]} é ${i}`)
+}
