@@ -46,7 +46,7 @@
 // a. Escreva um programa que devolva o maior e o menor números contidos no array original
 // const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 // let maior = 0
-// let menor = 1000
+// let menor = Infinity
 
 // for (let i = 0; i <= array.length; i++) {
 //     let numero = array[i]
@@ -82,9 +82,9 @@
 
 
 // d. Escreva um programa que gere um novo array contendo strings, da seguinte forma: "O elemento do índex i é: numero"
-const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
-let novoArray = []
+// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// let novoArray = []
 
-for (let i = 0; i < array.length; i++) {
-    console.log(`O elemento do índex ${array[i]} é ${i}`)
-}
+// for (let i = 0; i < array.length; i++) {
+//     console.log(`O elemento do índex ${array[i]} é ${i}`)
+// }
