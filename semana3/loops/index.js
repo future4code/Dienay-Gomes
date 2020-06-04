@@ -60,13 +60,25 @@
 // console.log("Esse é o maior número ", maior)
 
 // b. Escreva um programa que devolva um novo array contendo todos os valores do array original divididos por 10.
+// const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+// let novoArray = []
+
+// for (const item of array) {    
+//     novoArray.push(item/10)
+// }
+// console.log(novoArray)
+
+// c. Escreva um programa que devolva um novo array contendo, somente, os números pares do array original.
 const array = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
 let novoArray = []
 
-for (const item of array) {    
-    novoArray.push(item/10)
+for (const item of array) {
+    if (item % 2 === 0){
+        novoArray.push(item)
+    }
 }
+
 console.log(novoArray)
 
-// c. Escreva um programa que devolva um novo array contendo, somente, os números pares do array original.
+
 // d. Escreva um programa que gere um novo array contendo strings, da seguinte forma: "O elemento do índex i é: numero"
