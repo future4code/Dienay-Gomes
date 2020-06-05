@@ -10,3 +10,4 @@
  * 
  * 
  */
+console.log("Bem vindo ao jogo de Blackjack!")
