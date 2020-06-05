@@ -12,31 +12,28 @@
  */
 console.log("Bem vindo ao jogo de Blackjack!")
 
-let carta1Usuario = 0
-let carta2Usuario = 0
-let carta1Cpu = 0
-let carta2Cpu = 0
+let carta1Usuario = comprarCarta()
+let carta2Usuario = comprarCarta()
+let carta1Cpu = comprarCarta()
+let carta2Cpu = comprarCarta()
 let resultadoUser = 0
 let resultadoCpu = 0
 
-if(confirm("Quer iniciar uma nova rodada?")) {
+if (confirm("Quer iniciar uma nova rodada?")) {
    // o que fazer se o usuário clicar "ok"
-   carta1Usuario  = comprarCarta()
-   carta2Usuario  = comprarCarta()
+   // if (carta1Usuario === "A" && carta2Usuario === "A" || carta1Cpu === "A" && carta2Cpu === "A") {
+      
+   // }
 
    resultadoUser = (carta1Usuario.valor) + (carta2Usuario.valor)
    console.log(`Usuário - cartas: ${carta1Usuario.texto} ${carta2Usuario.texto}  - pontuação ${resultadoUser}`)
-   
-
-   carta1Cpu = comprarCarta()
-   carta2Cpu = comprarCarta()
 
    resultadoCpu = (carta1Cpu.valor) + (carta2Cpu.valor)
    console.log(`Computador - cartas: ${carta1Cpu.texto} ${carta1Cpu.texto}  - pontuação ${resultadoCpu}`)
 
-   if (resultadoUser > resultadoCpu || resultadoUser === 21){
+   if (resultadoUser > resultadoCpu || resultadoUser === 21) {
       console.log("O usuário ganhou!")
-   } else if (resultadoUser < resultadoCpu || resultadoCpu ===21) {
+   } else if (resultadoUser < resultadoCpu || resultadoCpu === 21) {
       console.log("O computador ganhou!")
    } else {
       console.log("Empate!")
@@ -45,4 +42,3 @@ if(confirm("Quer iniciar uma nova rodada?")) {
 } else {
    // o que fazer se o usuário clicar "cancelar"
    console.log("O jogo acabou")
-}
