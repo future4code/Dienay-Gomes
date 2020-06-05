@@ -34,6 +34,14 @@ if(confirm("Quer iniciar uma nova rodada?")) {
    resultadoCpu = (carta1Cpu.valor) + (carta2Cpu.valor)
    console.log(`Computador - cartas: ${carta1Cpu.texto} ${carta1Cpu.texto}  - pontuação ${resultadoCpu}`)
 
+   if (resultadoUser > resultadoCpu || resultadoUser === 21){
+      console.log("O usuário ganhou!")
+   } else if (resultadoUser < resultadoCpu || resultadoCpu ===21) {
+      console.log("O computador ganhou!")
+   } else {
+      console.log("Empate!")
+   }
+
 } else {
    // o que fazer se o usuário clicar "cancelar"
    console.log("O jogo acabou")
