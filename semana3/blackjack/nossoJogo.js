@@ -11,3 +11,9 @@
  * 
  */
 console.log("Bem vindo ao jogo de Blackjack!")
+
+if(confirm("Quer iniciar uma nova rodada?")) {
+   // o que fazer se o usuário clicar "ok"
+} else {
+	// o que fazer se o usuário clicar "cancelar"
+}
