@@ -12,50 +12,137 @@
  */
 console.log("Bem vindo ao jogo de Blackjack!")
 
-let carta1Usuario = comprarCarta()
-let carta2Usuario = comprarCarta()
-let carta3Usuario = comprarCarta()
-let carta1Cpu = comprarCarta()
-let carta2Cpu = comprarCarta()
-let carta3Cpu = comprarCarta()
+//nessa versão preferi utilizar arrays, pra facilitar na distribuição e compra de cartas.
+let cartasUser = []
+let cartasCpu = []
+
 let resultadoUser = 0
 let resultadoCpu = 0
 
 if (confirm("Quer iniciar uma nova rodada?")) {
-   // o que fazer se o usuário clicar "ok"
-   while (carta1Usuario.valor === 11 && carta2Usuario.valor === 11 || carta1Cpu.valor === 11 && carta2Cpu.valor === 11) {
-      carta1Usuario = comprarCarta()
-      carta2Usuario = comprarCarta()
-      carta1Cpu = comprarCarta()
-      carta2Cpu = comprarCarta()
-      console.log(carta2Usuario, carta1Usuario, carta2Cpu, carta1Cpu)
-   }
+	// o que fazer se o usuário clicar "ok"
 
-   confirm("Deseja comprar mais uma carta?")
+	//compra das primeiras cartas para o usuário e computador
+	for (let i = 0; i < 2; i++) {
+		cartasUser.push(comprarCarta())
+		cartasCpu.push(comprarCarta())
+	}
 
+	//caso o usuário o computador recebam 2 "A" receberam cartas novas
+	while (cartasUser[0].valor === 11 && cartasUser[1].valor === 11 || cartasCpu[0].valor === 11 && cartasCpu[1].valor === 11) {
+		for (let i = 0; i < 2; i++) {
+			cartasUser = cartasUser.push(comprarCarta())
+			cartasCpu = cartasCpu.push(comprarCarta())
+		}
 
-   if (confirm(`Suas cartas são ${carta1Usuario.texto} ${carta2Usuario.texto}. A carta revelada do computador é ${carta1Cpu.texto}.`+ "\n"+ "Deseja comprar mais uma carta?")) {
-      carta3Usuario = comprarCarta()
-      carta3Cpu = comprarCarta()
-   } else {
+	}
 
-   }
+	//mostrando uma carta do computador e as duas do usuário. Aqui o usuário pode comprar mais 3 cartas ou ficar comas que já tem na mão.
+	let compraDeCarta = ""
+	for (item of cartasUser){
+		compraDeCarta += " " + item.texto 
+	}
 
-   resultadoUser = (carta1Usuario.valor) + (carta2Usuario.valor) + (carta3Usuario.valor)
-   console.log(`Usuário - cartas: ${carta1Usuario.texto} ${carta2Usuario.texto} ${carta3Usuario.texto} - pontuação ${resultadoUser}`)
+	if (confirm(`Suas cartas são ${compraDeCarta}. A carta revelada do computador é ${cartasCpu[0].texto}.` + "\n" + "Deseja comprar mais uma carta?")) {
 
-   resultadoCpu = (carta1Cpu.valor) + (carta2Cpu.valor) + (carta3Cpu.valor)
-   console.log(`Computador - cartas: ${carta1Cpu.texto} ${carta2Cpu.texto} ${carta3Cpu.texto} - pontuação ${resultadoCpu}`)
+		cartasUser.push(comprarCarta())
 
-   if (resultadoUser > resultadoCpu || resultadoUser === 21) {
-      console.log("O usuário ganhou!")
-   } else if (resultadoUser < resultadoCpu || resultadoCpu === 21) {
-      console.log("O computador ganhou!")
-   } else {
-      console.log("Empate!")
-   }
+		compraDeCarta = ""
+		for (item of cartasUser){
+			compraDeCarta += " " + item.texto 
+		}
+
+		if (confirm(`Suas cartas são ${compraDeCarta}. A carta revelada do computador é ${cartasCpu[0].texto}.` + "\n" + "Deseja comprar mais uma carta?")) {
+
+			cartasUser.push(comprarCarta())
+
+			compraDeCarta = ""
+			for (item of cartasUser){
+				compraDeCarta += " " + item.texto 
+			}
+
+			if (confirm(`Suas cartas são ${compraDeCarta}. A carta revelada do computador é ${cartasCpu[0].texto}.` + "\n" + "Deseja comprar mais uma carta?")) {
+
+				cartasUser.push(comprarCarta())
+				
+				compraDeCarta = ""
+				for (item of cartasUser){
+					compraDeCarta += " " + item.texto 
+				}
+			} else {
+
+			}
+		} else {
+
+		}
+	} else {
+
+	}
+
+	//soma dos pontos do usuário
+	for (let i in cartasUser) {
+		resultadoUser += cartasUser[i].valor
+	}
+
+	//soma dos pontos do computador
+	for (let i in cartasCpu) {
+		resultadoCpu += cartasCpu[i].valor
+	}
+
+	//computador decide se paga mais cartas
+	if (resultadoCpu < 16) {
+		cartasCpu.push(comprarCarta())
+		resultadoCpu += cartasCpu[2].valor
+
+		if (resultadoCpu < 16) {
+			cartasCpu.push(comprarCarta())
+			resultadoCpu += cartasCpu[3].valor
+
+			if (resultadoCpu < 16) {
+				cartasCpu.push(comprarCarta())
+				resultadoCpu += cartasCpu[4].valor
+			} else {
+
+			}
+		} else {
+
+		}
+	} else {
+
+	}
+
+	//mensagem mostrando cartas e pontos do usuário
+	let mensagemUser = ""
+
+	for (item of cartasUser){
+		mensagemUser += " " + item.texto 
+	}
+
+	//mensagem mostrando cartas e pontos do computador
+	let mensagemCpu = ""
+
+	for (item of cartasCpu){
+		mensagemCpu += item.texto + " "
+	}
+
+	//mensegem de vencedor ou empates
+	let resultado = ""
+
+	if (resultadoUser > 21) {
+		resultado = "O computador ganhou!"
+	} else if (resultadoCpu > 21) {
+		resultado = "O usuário ganhou!"
+	} else if (resultadoUser > resultadoCpu || resultadoUser === 21) {
+		resultado = "O usuário ganhou!"
+	} else if (resultadoCpu > resultadoUser || resultadoCpu === 21) {
+		resultado = "O computador ganhou!"
+	} else if (resultadoUser === resultadoCpu || (resultadoUser > 21 && resultadoCpu > 21)){
+		resultado = "Empate!"
+	}
+
+	alert(`Suas cartas são ${mensagemUser}. Sua pontuação é ${resultadoUser}.\n As cartas do computador são ${mensagemCpu}. A pontuação do computador é ${resultadoCpu}. \n ${resultado}`)
 
 } else {
-   // o que fazer se o usuário clicar "cancelar"
-   console.log("O jogo acabou")
+	// o que fazer se o usuário clicar "cancelar"
+	console.log("O jogo acabou")
 }
