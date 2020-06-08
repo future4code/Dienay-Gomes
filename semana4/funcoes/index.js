@@ -69,3 +69,14 @@
 //  Ela pega os valores do array e soma todos eles entre si e guarda esse resultado na variável resultadoA e multiplica todos entre si e guarda esse resultado na variável resultadoB, logo após isso insere esses dois valores em um novo array chamado arrayFinal. Talvez chamar de somaEMultiplica seja mais sugestivo.
 
 
+// Exercícios de escrita de código
+// EXERCÍCIO 4
+
+// a. A função deve receber um número correspondente aos "anos humanos" que um cachorro tem e calcular a "idade de cachorro" dele. Considere que 1 ano humano equivale a 7 anos de cachorro
+
+// function idadeDeDoguineo(idade) {
+//     const resultado = idade * 7
+//     return resultado
+// }
+
+// console.log(idadeDeDoguineo(4))
