@@ -45,3 +45,27 @@
 // b. O código funcionaria se a lista fosse um array de números (ao invés de um array de string)  e o nome fosse um número, ao se chamar a função? Justifique sua resposta.
 //  funcionaria, pois os valores contidos num array são acessados da mesma forma independente do tipo.
 
+
+//EXERCÍCIO 3
+
+// function metodo(array) {
+//     let resultadoA = 0;
+//     let resultadoB = 1;
+//     let arrayFinal = [];
+
+//     for (let x of array) {
+//         resultadoA += x;
+//         resultadoB *= x;
+//     }
+
+//     arrayFinal.push(resultadoA);
+//     arrayFinal.push(resultadoB);
+//     return arrayFinal;
+// }
+
+// const array = [1, 2, 3, 4, 5]
+// console.log(metodo(array))
+
+//  Ela pega os valores do array e soma todos eles entre si e guarda esse resultado na variável resultadoA e multiplica todos entre si e guarda esse resultado na variável resultadoB, logo após isso insere esses dois valores em um novo array chamado arrayFinal. Talvez chamar de somaEMultiplica seja mais sugestivo.
+
+
