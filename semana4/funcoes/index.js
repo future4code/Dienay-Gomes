@@ -80,3 +80,20 @@
 // }
 
 // console.log(idadeDeDoguineo(4))
+
+// b.  Escreva uma função que receba 4 parâmetros que correspondem às informações de uma pessoa: o nome (string), a idade (number), o endereço (string) e um boolean que representa se é estudante ou não. Ela deve retornar uma string que unifique todas as informações da pessoa em uma só mensagem com o template:
+
+// function dados(nome, idade, endereco, estudante) {
+
+//     if (estudante === "sim") {
+//         sou = "sou"
+//     } else {
+//         sou = "não sou"
+//     }
+
+//     const frase = `Eu sou ${nome}, tenho ${idade} anos, moro em ${endereco} e ${sou} estudante`
+
+//     return frase
+// }
+
+// console.log(dados("Dienay", 29, "Rua coisada", "sim"))
