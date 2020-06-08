@@ -97,3 +97,38 @@
 // }
 
 // console.log(dados("Dienay", 29, "Rua coisada", "sim"))
+
+
+//EXERCÍCIO 5
+const seculo = ["I","II","III","IV","V","VI","VII","VIII",'IX',"X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"]
+
+
+const periodo = ()
+for (let i in seculo) {
+     = i
+    if (i )
+}
+
+let array =  []
+for(let ano = 0; ano < 2101; ano += 100){
+    array.push(ano+1) 
+}
+console.log(array)
+
+// let arrayDeNomes = ["Darvas", "Goli", "João", "Paulinha", "Soter"];
+
+// const funcao = (lista, nome) => {
+//   for (let i = 0; i < lista.length; i++) {
+//     if (lista[i] === nome) {
+//       return i;
+//     }
+//   }
+// };
+
+// console.log(funcao(arrayDeNomes, "Darvas"));
+// console.log(funcao(arrayDeNomes, "João"));
+// console.log(funcao(arrayDeNomes, "Paula"));
+
+//O ano [ANO] pertence ao século[SÉCULO EM ALGARISMOS ROMANOS] 
+
+// ["I","II","III","IV","V","VI","VII","VIII",'IX',"X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"]
