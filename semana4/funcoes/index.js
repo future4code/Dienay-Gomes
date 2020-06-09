@@ -100,35 +100,80 @@
 
 
 //EXERCÍCIO 5
-const seculo = ["I","II","III","IV","V","VI","VII","VIII",'IX',"X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"]
 
+// let periodo = (ano) => {
+//     const seculo = ["I","II","III","IV","V","VI","VII","VIII",'IX',"X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"]
+//     const anos = [1, 101, 201, 301, 401, 501, 601, 701, 801, 901, 1001, 1101, 1201, 1301, 1401, 1501, 1601, 1701, 1801, 1901, 2001, 2101]
 
-const periodo = ()
-for (let i in seculo) {
-     = i
-    if (i )
-}
-
-let array =  []
-for(let ano = 0; ano < 2101; ano += 100){
-    array.push(ano+1) 
-}
-console.log(array)
-
-// let arrayDeNomes = ["Darvas", "Goli", "João", "Paulinha", "Soter"];
-
-// const funcao = (lista, nome) => {
-//   for (let i = 0; i < lista.length; i++) {
-//     if (lista[i] === nome) {
-//       return i;
+//     for (let i =0; i < anos.length; i++) { 
+//         while (ano >= anos[i] && ano < anos[i+1])
+//         return `O ano ${ano} pertence ao século ${seculo[i]}`
 //     }
-//   }
-// };
+// }
 
-// console.log(funcao(arrayDeNomes, "Darvas"));
-// console.log(funcao(arrayDeNomes, "João"));
-// console.log(funcao(arrayDeNomes, "Paula"));
+// console.log(periodo(300))
 
-//O ano [ANO] pertence ao século[SÉCULO EM ALGARISMOS ROMANOS] 
 
-// ["I","II","III","IV","V","VI","VII","VIII",'IX',"X","XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX","XXI"]
+//EXERCÍCIO 6
+//a. Escreva uma função que receba um array de números e devolva a quantidade de elementos nele
+
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+
+// function tamanhoArray(array) {
+//     let tamanho = array.length
+//     return tamanho;
+// }
+// console.log(`O array tem ${tamanhoArray(array)} elementos`)
+
+//b. Escreva uma função que receba um número e devolva um booleano indicando se ele é par ou não
+
+// function parOuImpar(numero) {
+//     let parImpar
+//     if (numero%2 === 0) {
+//         parImpar = `O número ${numero} é par`
+//     } else {
+//         parImpar = `O número ${numero} é impar`
+//     }
+//     return parImpar
+// }
+// console.log(parOuImpar(10))
+
+//c. Escreva uma função que receba um array de números e devolva a quantidade de números pares dentro dele
+
+// function contaPares(numeros) {
+//     let pares = 0
+//     for (let i = 0; i < numeros.length; i++) {
+//         if (numeros[i] % 2 === 0) {
+//             pares += 1
+//         }
+//     }
+//     return pares
+// }
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+// console.log(contaPares(array))
+
+//d. Reescreva seu código anterior (do item c) de tal forma que ele utilize a função do item b para verificar se o número é par
+
+// let pares = 0
+// function contaPares(numeros) {
+    
+//     for (let i = 0; i < numeros.length; i++) {
+//         if (numeros[i] % 2 === 0) {
+//             pares += 1
+//         }
+//     }
+//     let imparOuPar = parOuImpar(pares)
+//     return pares
+// }
+// const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22, 30]
+// console.log(`O array tem ${contaPares(array)} números pares, ${parOuImpar(pares)}`)
+
+// function parOuImpar(numero) {
+//     let parImpar
+//     if (numero%2 === 0) {
+//         parImpar = `e o número ${numero} é par`
+//     } else {
+//         parImpar = `e o número ${numero} é impar`
+//     }
+//     return parImpar
+// }
