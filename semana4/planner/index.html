@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>Planner</title>
+</head>
+<body>
+    <header class="commom">
+        <h1>Minha semana</h1>
+        <div>
+            <label for="tarefa">Nova Tarefa</label>
+
+            <input type="text" name="" id="textoAdicionar">
+
+            <select name="diasDaSemana" id="diasDaSemana">
+                <option value="domingo">Domingo</option>
+                <option value="segunda">Segunda</option>
+                <option value="terca">Terça</option>
+                <option value="quarta">Quarta</option>
+                <option value="quinta">Quinta</option>
+                <option value="sexta">Sexta</option>
+                <option value="sabado">Sábado</option>
+            </select>
+
+            <button type="submit" id="botaoAdicionar" onclick="adicionaTarefa
+            ()">Criar Tarefa </button>
+            
+        </div>
+    </header>
+
+    <section id="container" class="commom">
+        <div class="dias">
+            <h2>Domingo</h2>
+            <ul id="domingo">
+
+            </ul>
+        </div>
+        <div class="dias">
+            <h2>Segunda</h2>
+            <ul id="segunda">
+
+            </ul>
+        </div>
+        <div class="dias">
+            <h2>Terça</h2>
+            <ul id="terca">
+                
+            </ul>
+        </div>
+        <div class="dias">
+            <h2>Quarta</h2>
+            <ul id="quarta">
+
+            </ul>
+        </div>
+        <div class="dias">
+            <h2>Quinta</h2>
+            <ul id="quinta">
+
+            </ul>
+        </div>
+        <div class="dias">
+            <h2>Sexta</h2>
+            <ul id="sexta">
+
+            </ul>
+        </div>
+        <div class="dias">
+            <h2>Sábado</h2>
+            <ul id="sabado">
+
+            </ul>
+        </div>
+    </section>
+</body>
+</html>
