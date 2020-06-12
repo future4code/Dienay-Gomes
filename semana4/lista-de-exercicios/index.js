@@ -18,3 +18,16 @@
 // console.log de novoMontante terá o resultado de 165
 // edo segundoMontante será "TIPO DE INVESTIMENTO INFORMADO INCORRETO"
 
+
+//EXERCÍCIO 3
+
+// Esse programinha pega um array de números compara os pares e põe eles em outro array só com números pare e os impares vão pra outro array.
+
+// o for percorre todo o array numeros e a cada numero o if compara se o resto da divisão desse número por 2 é igual a 0, caso seja ele adiciona esse número no array1, caso não seja esse número é adicionado no array2 através do .push
+
+// o primeiro console.log mostra o tamanho do array numero que é 14
+// o segundo console.log mostra o tamanho do array1 que é 6
+// o tercei console.log mostra o tamanho do array1 que é 8
+
+
+
