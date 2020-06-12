@@ -11,7 +11,7 @@ fieldset {
 
 button {
     width: 100px;
-    height: 40px;
+    height: 30px;
     align-self: center;
 }
 
@@ -25,6 +25,7 @@ h3 {
 
 .main {
     display: grid;
+    font-size: 12px;
     gap: 8px;
     grid-template-columns: 1fr 1fr 1fr;
     margin-left: auto;
@@ -60,4 +61,21 @@ fieldset {
 #mostrarExtrato{
     position: absolute;
     bottom: 40px;
+}
+
+.detalhes .field {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 4px;
+}
+
+#filtrar,
+#limpar {
+    width: 90px;
+    height: 20px;
+}
+
+#imprimir {
+    margin-top: 16px;
 }

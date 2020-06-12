@@ -43,6 +43,7 @@
 
         <fieldset class="telas detalhes">
             <h2>Despesas Detalhadas</h2>
+
             <div class="field">
                 <div class="field">
                     <label for="tipoDetalhe">Tipo(Casa, Viagem, Rolês, Outros)</label>
@@ -55,24 +56,30 @@
                     </select>
                 </div>
             </div>
+
             <div class="field">
-                <label for="minimo">Valor Mínimo</label>
+                <label for="minimo">Valor Mín.</label>
                 <input type="number" name="minimo" id="minimo">
             </div>
+
             <div class="field">
-                <label for="maximo">Valor Máximo</label>
+                <label for="maximo">Valor Máx.</label>
                 <input type="number" name="maximo" id="maximo">
             </div>
+
             <div class="field-group">
                 <button type="submit" id="filtrar" onclick="filtra()">Filtrar</button>
                 <button type="submit" id="limpar" onclick="limpaFiltros()">Limpar Filtros</button>
+            </div>
+            <div id="imprimir">
+
             </div>
         </fieldset>
         </div>
 
         <fieldset class="telas extrato">
             <h2>Extrato</h2>
-            <h3>Valor Total</h3>
+            <h3>Valor Total:<span id="total"></span></h3>
             <div class="field .mostrar">
                 <button type="submit" id="mostrarExtrato" onclick="mostraExtrato()">Mostrar Extrato</button>
             </div>
