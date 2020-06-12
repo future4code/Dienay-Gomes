@@ -47,9 +47,7 @@
 //for of
 //map
 
-
 // const lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
 
 // lista.forEach(numero => {
 //     console.log(numero)
@@ -62,3 +60,14 @@
 // mostraLista = lista.map(numero => {
 //     console.log(numero)
 // });
+
+//EXERCÍCIO 2
+// const booleano1 = true
+// const booleano2 = false
+// const booleano3 = !booleano2 true
+// const booleano4 = !booleano3 false
+// a) true && false && true = false
+// b) (true && false) || false = false
+// c)  (false || true) && (false || true) = true
+// d) !(false && true) || !(true && true) = true
+// e) !(true) && !(true) || (true && true && true) true
