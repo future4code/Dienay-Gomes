@@ -71,3 +71,14 @@
 // c)  (false || true) && (false || true) = true
 // d) !(false && true) || !(true && true) = true
 // e) !(true) && !(true) || (true && true && true) true
+
+//EXERCÍCIO 3
+// da forma que estava o while entraria em um loop infinito, pois não tinha iteração na variável i, então continuaria com o valor 0 e se colocasse qualquer valor positivo a partir de 1 ou até mesmo zero a condição estaria verdadeira.
+// para dar o resultado esperado eu tirei a iqualdade da comparação e coloquei i++ o contador i aumentar até o valor digitado no caso até um número antes do que for escolhido.
+
+// const quantidadeDeNumerosPares = 5
+// let i = 0
+// while(i < quantidadeDeNumerosPares) {
+//   console.log(i*2)
+//   i++
+// }
