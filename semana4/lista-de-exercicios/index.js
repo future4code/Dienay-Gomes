@@ -95,3 +95,41 @@
 // }
 
 // tipoDeTriangulo(1, 2, 3)
+
+//EXERCÍCIO 5
+// let num1 = 150
+// let num2 = 30
+// let maior = 0
+// let menor = 0
+
+// if (num1 > num2) {
+//     console.log(`O maior número é ${num1}`)
+//     maior = num1
+//     menor = num2
+// } 
+
+// if (num2 > num1) {
+//     console.log(`O maior número é ${num2}`)
+//     maior = num2
+//     menor = num1
+// } 
+
+// if (num1 % num2 === 0) {
+//     console.log(`${num1} é divisivel por ${num2}`)
+// } 
+
+// if (num1 % num2 !== 0) {
+//     console.log(`${num1} não é divisivel por ${num2}`)
+// }
+
+// if (num2 % num1 === 0) {
+//     console.log(`${num2} é divisivel por ${num1}`)
+// }
+
+// if (num2 % num1 !== 0) {
+//     console.log(`${num2} não é divisivel por ${num1}`)
+// }
+
+// console.log(`A diferença entre eles é ${maior - menor}`)
+
+
