@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js"></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="main">
+        <fieldset class="telas controle">
+            <h2>Controlador de Despesas</h2>
+            <h3>Criar post</h3>
+
+            <div class="field">
+                <label for="valor">Valor</label>
+                <input type="number" name="valor" id="valor">
+            </div>
+
+            <div class="field">
+                <label for="tipo">Tipo(Casa, Viagem, Rolês, Outros)</label>
+                <select name="tipo" id="tipo">
+                    <option value=""></option>
+                    <option value="casa">Casa</option>
+                    <option value="viagem">Viagem</option>
+                    <option value="rango">Rango</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="descricao">Descrição</label>
+                <input type="text" name="descricao" id="descricao">
+            </div>
+
+            <div class="field">
+                <button type="submit" id="cadastrar" onclick="cadastraDespesa()">Cadastrar Despesa</button>
+            </div>
+        </fieldset>
+
+        <fieldset class="telas detalhes">
+            <h2>Despesas Detalhadas</h2>
+
+            <div class="field">
+                <div class="field">
+                    <label for="tipoDetalhe">Tipo(Casa, Viagem, Rolês, Outros)</label>
+                    <select name="tipoDetalhe" id="tipoDetalhe">
+                        <option value=""></option>
+                        <option value="casa">Casa</option>
+                        <option value="viagem">Viagem</option>
+                        <option value="rango">Rango</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="minimo">Valor Mín.</label>
+                <input type="number" name="minimo" id="minimo">
+            </div>
+
+            <div class="field">
+                <label for="maximo">Valor Máx.</label>
+                <input type="number" name="maximo" id="maximo">
+            </div>
+
+            <div class="field-group">
+                <button type="submit" id="filtrar" onclick="filtra()">Filtrar</button>
+                <button type="submit" id="limpar" onclick="limpaFiltros()">Limpar Filtros</button>
+            </div>
+            <div id="imprimir">
+
+            </div>
+        </fieldset>
+        </div>
+
+        <fieldset class="telas extrato">
+            <h2>Extrato</h2>
+            <h3>Valor Total:<span id="total"></span></h3>
+            <div class="field .mostrar">
+                <button type="submit" id="mostrarExtrato" onclick="mostraExtrato()">Mostrar Extrato</button>
+            </div>
+        </fieldset>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    border: 1px solid orange;
+    padding: 16px;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    align-self: center;
+}
+
+h2 {
+    margin-bottom: 16px;
+}
+
+h3 {
+    margin-bottom: 8px;
+}
+
+.main {
+    display: grid;
+    font-size: 12px;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1220px;
+    padding: 16px;
+}
+
+fieldset {
+    border-radius: 8px;
+}
+
+.field {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.field button {
+    width: 150px;
+}
+
+.field-group {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.extrato {
+    position: relative;
+}
+
+#mostrarExtrato{
+    position: absolute;
+    bottom: 40px;
+}
+
+.detalhes .field {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 4px;
+}
+
+#filtrar,
+#limpar {
+    width: 90px;
+    height: 20px;
+}
+
+#imprimir {
+    margin-top: 16px;
+}
