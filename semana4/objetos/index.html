@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./index.css">
+    <title>Blog</title>
+</head>
+
+<body>
+    <section class="main">
+        <fieldset id="container-post">
+            <legend>Criar post</legend>
+            <div class="field">
+                <label for="titulo">Título</label>
+                <input type="text" name="" id="titulo">
+            </div>
+            <div class="field">
+                <label for="autor">Autor</label>
+                <input type="text" name="" id="autor">
+            </div>
+            <div class="field">
+                <label for="conteudo">Conteúdo</label>
+                <textarea name="" id="conteudo" cols="20" rows="8"></textarea>
+            </div>
+            <div class="field">
+                <button type="submit" id="criar-post" onclick="criaPost()">Criar Post</button>
+            </div>
+        </fieldset>
+        
+        <article id="container">
+            <header>
+                <h1>Esse blog é muito legal</h1>
+            </header>
+            <article>
+                <section id="postagem">
+                    
+                </section>
+            </article>
+        </article>
+    </section>
+</body>
+
+</html>
