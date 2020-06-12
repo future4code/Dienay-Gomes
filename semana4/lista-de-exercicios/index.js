@@ -13,7 +13,7 @@
 //EXERCÍCIO 2
 // Essa função recebe um tipo de investimento e um valor para esse investimento, compara ele, e devolve o valor atualizado baseado no tipo de investimento.
 
-// Primeiro o switch vai pegar o valor inserido no primeiro argumento da função, compara a cada caso específico criados nele, caso não tenha nada que se encaixe a esses casos ele entra no default e da a mensagem de tipode investimento incorreto. Mas caso ache o seu correspondente ele entra do trecho do case, pega o valor do segundo argumento da função e multiplica pelo valor que está definido nesse case específico, e põe esse valor numa variável que vai servir de retorno da função.
+// Primeiro o switch vai pegar o valor inserido no primeiro parâmetros da função, compara a cada caso específico criados nele, caso não tenha nada que se encaixe a esses casos ele entra no default e da a mensagem de tipode investimento incorreto. Mas caso ache o seu correspondente ele entra do trecho do case, pega o valor do segundo parâmetros da função e multiplica pelo valor que está definido nesse case específico, e põe esse valor numa variável que vai servir de retorno da função.
 
 // console.log de novoMontante terá o resultado de 165
 // edo segundoMontante será "TIPO DE INVESTIMENTO INFORMADO INCORRETO"
@@ -82,3 +82,16 @@
 //   console.log(i*2)
 //   i++
 // }
+
+//EXERCÍCIO 4
+// function tipoDeTriangulo(a, b, c) {
+//     if((a === b) && (a === c)) {
+//         console.log("Triângulo Equilátero")
+//     } else if((a === b) || (a === c) || (b === c)) {
+//         console.log("Triângulo Isósceles")
+//     } else {
+//         console.log("Triângulo Escaleno")
+//     }
+// }
+
+// tipoDeTriangulo(1, 2, 3)
