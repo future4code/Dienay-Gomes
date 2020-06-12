@@ -39,3 +39,26 @@
 // o valor do primeiro console.log vai ser -10
 // e o valor dosegundo console.log vai ser 1590
 
+
+//Exercícios de Lógica de Programação
+
+//EXERCÍCIO 1
+//forEach
+//for of
+//map
+
+
+// const lista = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+// lista.forEach(numero => {
+//     console.log(numero)
+// });
+
+// for (let numero of lista) {
+//     console.log(numero)
+// }
+
+// mostraLista = lista.map(numero => {
+//     console.log(numero)
+// });
