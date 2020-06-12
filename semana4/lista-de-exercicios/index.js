@@ -30,4 +30,12 @@
 // o tercei console.log mostra o tamanho do array1 que é 8
 
 
+//EXERCÍCIO 4
+
+// esse programa compara todos os números de um array e retorna o menor e o maior número.
+
+// o for vai fazer uma varredura do primeiro ao ultimo elemento do array numeros e a cada elemento os ifs iram compara todos os números a variável numero1 vai buscar o menor número por isso ela teve valor infinito no momento em que foi declarada, Assim o primeiro número do array independente de qual for sempre será menor que o infinito com isso vai ser possível entrar nesse if. A variável numero2 vai buscar o maior número por isso foi inicializada com valor 0.
+
+// o valor do primeiro console.log vai ser -10
+// e o valor dosegundo console.log vai ser 1590
 
