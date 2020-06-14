@@ -179,3 +179,12 @@
 // 1. Arrays são recipientes que podem guarda elementes de vários tipos, colocando cada elemento em seu próŕio espaço e dando indice para eles.
 // Objetos são elementos com características próprias, que poder ser acrescentadas ou retiradas segunda a necessida do momento, essas características descritas ajudam na classificação e filtragem desses objetos.
 
+//EXERCÍCIO 2
+// function criaRetangulo(lado1, lado2) {
+//     console.log("Largura do retângulo: " , lado1)
+//     console.log("Altura do retângulo: " , lado2)
+//     console.log("Perímetro do retângulo: " , (2 * (lado1 + lado2)))
+//     console.log("Área do retângulo: " , (lado1 * lado2))
+// }
+
+// criaRetangulo(20, 15)
