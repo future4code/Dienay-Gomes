@@ -335,3 +335,25 @@
 
 // montanhaRussaDoTerror(pessoas)
 
+// EXERCÍCIO 4
+// const consultas = [
+// 	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+// 	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+// 	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+// 	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+// ]
+// let tratamento = "Sr./Sra."
+// let data = "data da consulta"
+// let novaData = "data da consulta"
+// let nome = "Nome"
+// let lembrar = "lembrá-lo / lembrá-la"
+
+// const emails = [
+
+//     {naoCancelados: `Olá, ${tratamento} ${nome}. Estamos enviando esta mensagem para ${lembrar} da sua consulta no dia ${data}. Por favor, acuse o recebimento deste e-mail.`},
+
+//     {canceladas: `Olá, ${tratamento} ${nome}. Infelizmente, sua consulta marcada para o dia ${novaData} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la`}
+// ]
+
+// console.log(emails)
+
