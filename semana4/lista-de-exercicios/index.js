@@ -135,35 +135,41 @@
 
 //Exercícios de Funções
 //EXERCÍCIO 1
-const array = [ 1, 2, 34, 5, 6, 46, 86, 23, 24, 85]
-function mostraSegungoMenorEMaior(array) {
-    let maior = 0
-    let menor = Infinity
+// const array = [ 1, 2, 34, 5, 6, 46, 86, 23, 24, 85]
+// function mostraSegungoMenorEMaior(array) {
+//     let maior = 0
+//     let menor = Infinity
     
-    for (let e of array) {
-        if (e < menor) {
-            menor = e
-        } else if (e > maior) {
-            maior = e
-        }
-    }
-    
-    const semMenor = array.filter(numero => numero !== menor)
-    const semMaior = semMenor.filter(numero => numero !== maior)
-    let segundoMaior = 0
-    let segundoMenor = Infinity
+//     for (let e of array) {
+//         if (e < menor) {
+//             menor = e
+//         } else if (e > maior) {
+//             maior = e
+//         }
+//     }
 
-    for (let e of semMaior) {
-        if (e < segundoMenor) {
-            segundoMenor = e
-        } else if (e > segundoMaior) {
-            segundoMaior = e
-        }
-    }
-    console.log("O segundo menor é ", segundoMenor)
-    console.log("O segundo maior é ", segundoMaior)
+//     const semMenor = array.filter(numero => numero !== menor)
+//     const semMaior = semMenor.filter(numero => numero !== maior)
+//     let segundoMaior = 0
+//     let segundoMenor = Infinity
 
-}
+//     for (let e of semMaior) {
+//         if (e < segundoMenor) {
+//             segundoMenor = e
+//         } else if (e > segundoMaior) {
+//             segundoMaior = e
+//         }
+//     }
+//     console.log("O segundo menor é ", segundoMenor)
+//     console.log("O segundo maior é ", segundoMaior)
 
-mostraSegungoMenorEMaior(array)
-   
+// }
+
+// mostraSegungoMenorEMaior(array)
+
+//EXERCÍCIO 2
+// const helloOQue = function() {
+//     alert("Hello Future4, ksksksks")
+// }
+
+// helloOQue()
