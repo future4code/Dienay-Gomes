@@ -204,18 +204,47 @@
 // console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.ator1}, ${filmeFavorito.atriz}, ${filmeFavorito.ator2}, ${filmeFavorito.ator3} e ${filmeFavorito.ator4} `)
 
 //EXERCÍCIO 4
-const pessoa = {
-    nome: 'Joãozinho',
-    idade: 65,
-    email: 'joaozinho_zinho@hotmail.com',
-    endereco: 'Rua de baixo - sem número' 
-}
+// const pessoa = {
+//     nome: 'Joãozinho',
+//     idade: 65,
+//     email: 'joaozinho_zinho@hotmail.com',
+//     endereco: 'Rua de baixo - sem número' 
+// }
 
-function anonimizarPessoa() {
-    const anonimo = {
-        ...pessoa,
-        nome: 'ANONIMO'
-    }
-}
+// function anonimizarPessoa() {
+//     const anonimo = {
+//         ...pessoa,
+//         nome: 'ANONIMO'
+//     }
+// }
 
-anonimizarPessoa()
+// anonimizarPessoa()
+
+// Exercícios de Funções de array
+// EXERCÍCIO 1
+//a.
+// const pessoas = [
+// 	{ nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ]
+
+// function adultos(array) {
+//     const maiorDeVinte = array.filter((e, i, a) => {
+//         return e.idade >= 20
+//     })
+//     console.log("Essas pessoas são adutas", maiorDeVinte)
+// }
+
+// adultos(pessoas)
+
+// //b.
+// function jovens(array) {
+//     const menorDeVinte = array.filter((e, i, a) => {
+//         return e.idade < 20
+//     })
+//     console.log("Essas pessoas são crianças e adolescentes", menorDeVinte)
+// }
+
+// jovens(pessoas)
