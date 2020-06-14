@@ -202,3 +202,20 @@
 // }
 
 // console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.ator1}, ${filmeFavorito.atriz}, ${filmeFavorito.ator2}, ${filmeFavorito.ator3} e ${filmeFavorito.ator4} `)
+
+//EXERCÍCIO 4
+const pessoa = {
+    nome: 'Joãozinho',
+    idade: 65,
+    email: 'joaozinho_zinho@hotmail.com',
+    endereco: 'Rua de baixo - sem número' 
+}
+
+function anonimizarPessoa() {
+    const anonimo = {
+        ...pessoa,
+        nome: 'ANONIMO'
+    }
+}
+
+anonimizarPessoa()
