@@ -188,3 +188,17 @@
 // }
 
 // criaRetangulo(20, 15)
+
+//EXERCÍCIO 3
+// const filmeFavorito = {
+//     titulo: 'Jumanji: Bem Vindo à Selva',
+//     ano: '2017',
+//     diretor: 'Jake Kasdan',
+//     ator1: 'Dwayne Johnson',
+//     atriz: 'Karen Gilian',
+//     ator2: 'Kevin Hart',
+//     ator3: 'Jack Black',
+//     ator4: 'Nick Jonas'
+// }
+
+// console.log(`Venha assistir ao filme ${filmeFavorito.titulo}, de ${filmeFavorito.ano}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.ator1}, ${filmeFavorito.atriz}, ${filmeFavorito.ator2}, ${filmeFavorito.ator3} e ${filmeFavorito.ator4} `)
