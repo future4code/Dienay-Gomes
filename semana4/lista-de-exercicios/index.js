@@ -173,3 +173,9 @@
 // }
 
 // helloOQue()
+
+//Exercícios de Objetos
+//EXERCÍCIO 1
+// 1. Arrays são recipientes que podem guarda elementes de vários tipos, colocando cada elemento em seu próŕio espaço e dando indice para eles.
+// Objetos são elementos com características próprias, que poder ser acrescentadas ou retiradas segunda a necessida do momento, essas características descritas ajudam na classificação e filtragem desses objetos.
+
