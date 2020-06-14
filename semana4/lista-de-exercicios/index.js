@@ -248,3 +248,36 @@
 // }
 
 // jovens(pessoas)
+
+// EXERCÍCIO 2
+//a.
+// const array = [1, 2, 3, 4, 5, 6]
+
+// const multiplicados = array.map ((e, i, a) => {
+//     return e * 2
+// })
+
+// console.log(multiplicados)
+
+//b.
+// const array = [1, 2, 3, 4, 5, 6]
+
+// const multiplicados = array.map ((e, i, a) => {
+//     return `${e * 3}`
+// })
+
+// console.log(multiplicados)
+
+//c.
+// const array = [1, 2, 3, 4, 5, 6]
+
+// const multiplicados = array.map ((e, i, a) => {
+//     if(e % 2 === 0) {
+//         return `${e} é par`
+//     } else {
+//         return `${e} é impar`
+//     }
+// })
+
+// console.log(multiplicados)
+
