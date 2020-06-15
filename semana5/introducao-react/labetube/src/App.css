@@ -144,19 +144,19 @@ article {
 }
 
 @media screen and (max-width: 800px) {
-  main {
+  section {
       grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media screen and (max-width: 600px) {
-  main {
+  section {
       grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width : 420px) {
-  main {
+  section {
       grid-template-columns: 1fr;
   }
 }
