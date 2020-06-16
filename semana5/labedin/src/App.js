@@ -3,10 +3,15 @@ import './App.css';
 import CardGrande from './components/CardGrande/CardGrande';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import CardPequeno from './components/CardPequeno/CardPequeno'
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <div className="App">
+      <Header 
+        logo="LabedIn"
+      />
+
       <div className="page-section-container">
         <h2>Dados pessoais</h2>
         <CardGrande 
@@ -45,6 +50,16 @@ function App() {
           nome="NASA" 
           descricao="Apontando defeitos." 
         />
+      </div>
+
+      <div className="page-section-container">
+        <h2>Formação acadêmica</h2>
+        <CardGrande 
+          imagem="https://media-exp1.licdn.com/dms/image/C560BAQGXX-pQE9ZghQ/company-logo_200_200/0?e=1600300800&v=beta&t=xdcq8CsWYilEDr43DnqUSOouL8uwxSiIIAedK8izuUE" 
+          nome="Labenu" 
+          descricao="Web Full Stack Development" 
+        />
+        
       </div>
 
       <div className="page-section-container">
