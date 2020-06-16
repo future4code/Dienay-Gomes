@@ -1,0 +1,19 @@
+.littlecard-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+}
+
+.littlecard-container span {
+    background-image: url(../../incons/chevron-right-solid.svg);
+    display: flex;
+    height: 16px;
+    margin-right: 4px;
+    width: 10px;
+}
+
+.littlecard-container p {
+    margin-right: 8px;
+}
