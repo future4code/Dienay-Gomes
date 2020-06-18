@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+ul {
+  margin-top: 16px;
+}
+
+li {
+  list-style: none;
+  margin: 8px 4px;
+}
+
+hr {
+  border: 1px solid #e5e5e5;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  padding: 32px 16px;
+}
+
+section {
+  background-color: #f9f9f9;
+  padding: 16px;
+  min-height: 76vh;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+header {
+  align-items: center;
+  background-color: #f47d1f;
+  box-shadow: 2px 1px 5px #8b5e1f;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  height: 12vh;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 32px;
+}
+
+header span {
+  background-image: url("./icons/logo.svg");
+  display: flex;
+  height: 40px;
+  margin-right: 8px;
+  width: 45px;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+}
+
+.pesquisa {
+  text-align: center;
+}
+
+.pesquisa input {
+  border: none;
+  border-radius: 2px;
+  padding: 10px;
+  width: 60%;
+}
+
+.botoes-meunu-vertical{
+  display: flex;
+}
+
+.botoes-meunu-vertical span {
+  display: flex;
+  margin-right: 16px;
+}
+
+.home {
+  background-image: url("./icons/home-solid.svg");
+  height: 18px;
+  width: 20px;
+}
+
+.em-alta{
+  background-image: url("./icons/fire-alt-solid.svg");
+  height: 23px;
+  width: 20px;
+}
+
+.inscricoes {
+  background-image: url("./icons/angle-right-solid.svg");
+  height: 20px;
+  width: 20px;
+}
+
+.originais {
+  background-image: url("./icons/angle-right-solid.svg");
+  height: 20px;
+  width: 20px;
+}
+
+.historia {
+  background-image: url("./icons/history-solid.svg");
+  height: 20px;
+  width: 20px;
+}
+
+footer {
+  align-items: center;
+  background-color: #f47d1f;
+  box-shadow: 2px -2px 5px #8b5e1f;
+  bottom: 0;
+  color: white;
+  display: flex;
+  height: 12vh;
+  justify-content: center;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+h4 {
+  padding: 8px;
+}
+
+article {
+  border: 1px solid #ffd190;
+  box-shadow: 2px 2px 5px #ffd190;
+}
+
+@media screen and (max-width: 800px) {
+  section {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  section {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width : 420px) {
+  section {
+      grid-template-columns: 1fr;
+  }
+}
