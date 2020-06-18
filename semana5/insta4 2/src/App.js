@@ -1,6 +1,28 @@
 import React from 'react';
 import './App.css';
 import Post from './components/Post/Post';
+import styled from 'styled-components';
+
+const Formulario = styled.div`
+  box-sizing: border-box;
+  border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+
+  h3 {
+    margin: 10px 0;
+  }
+
+  input {
+    margin-bottom: 10px;
+  }
+`
 
 class App extends React.Component {
 
@@ -55,7 +77,8 @@ class App extends React.Component {
   render() {
     return (
       <div className={'app-container'}>
-        <div>
+        <Formulario>
+          <h3>Novo Post</h3>
           <input
             value={this.state.valorInputUser}
             onChange={this.onChangeUser}
@@ -72,7 +95,7 @@ class App extends React.Component {
             placeholder={'Foto do post'}
           />
           <button onClick={this.postar}>Postar</button>
-        </div>
+        </Formulario>
         {this.state.posts.map((post) => {
       // Porém, cada pessoa não é mais uma string somente, mas sim um objeto
       // com duas propriedades. Por isso, no momento de colocá-la na tela
