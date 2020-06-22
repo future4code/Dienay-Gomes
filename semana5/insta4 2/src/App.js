@@ -96,6 +96,7 @@ class App extends React.Component {
           />
           <button onClick={this.postar}>Postar</button>
         </Formulario>
+        
         {this.state.posts.map((post) => {
       // Porém, cada pessoa não é mais uma string somente, mas sim um objeto
       // com duas propriedades. Por isso, no momento de colocá-la na tela
