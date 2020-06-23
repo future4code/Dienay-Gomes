@@ -38,7 +38,7 @@ class App extends React.Component {
   componentDidMount() {
     const tarefasString = localStorage.getItem("listaDeTarefas")
     const tarefasObjeto = JSON.parse(tarefasString)
-    this.setState({tarefa: tarefasObjeto})
+    this.setState({tarefas: tarefasObjeto})
   };
 
   onChangeInput = (event) => {
@@ -69,7 +69,6 @@ class App extends React.Component {
       }
     })
     this.setState({tarefas: selecionarTarefa})
-    console.log(id)
   }
 
   onChangeFilter = (event) => {
