@@ -3,11 +3,32 @@ import './App.css';
 import axios from 'axios';
 import styled from 'styled-components'
 import ListUsers from './components/ListUsers';
+import icon from './icons/trash.svg'
 
 const ButtonChange = styled.button`
   position:fixed;
   top:0;
   left: 0;
+`
+
+const EachUser = styled.div`
+  margin: 60px auto;
+  width: 300px;
+
+  > div {
+    align-items: center;
+    border-bottom: 1px solid #283e4a;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  img {
+    width: 20px;
+  }
+
+  img:hover {
+    color: red;
+  }
 `
 
 const ContainerForm = styled.div`
@@ -96,11 +117,30 @@ class App extends React.Component {
         this.getUser()
         this.setState({userValue: ""})
         this.setState({emailValue: ""})
+        alert("O usuario foi adicionado com sucesso!")
       }
     ).catch(error => {
       console.log(error.data)
+      alert("Não foi possível adicionar o usuário!")
     })
   }
+
+  deleteUser = (userId) => {
+    axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${userId}`,
+    {
+      headers: {
+        Authorization: "dienay-lima-turing"
+        }
+    }
+      )
+      .then(response => {
+        this.getUser()
+        alert("O usuario foi deletado com sucesso!")
+      })
+      .catch(error => {
+        alert("Não foi possível deletar o usuário!")
+      })
+    }
 
   changeComponent = () => {
     this.setState({ toExchangeComponent: !this.state.toExchangeComponent })
@@ -128,17 +168,18 @@ class App extends React.Component {
         <div>
           {
           this.state.toExchangeComponent ? 
-          <div>
+          <EachUser>
+            <h2>Usuários Cadastrados:</h2>
             {this.state.userList.map(user => {
             return <div>
               <ListUsers
                 key={user.id}
                 mostraUser={user.name}
               />
-              <button onClick={() => this.deleteUser(user.id)}>Apagar</button>
+              <button onClick={() => this.deleteUser(user.id)}>X</button>
             </div>
           })}
-          </div>
+          </EachUser>
           :
           <ContainerForm>
             <Form>
