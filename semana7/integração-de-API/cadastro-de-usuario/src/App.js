@@ -10,61 +10,35 @@ const ButtonChange = styled.button`
   left: 0;
 `
 
-const ContainerForm = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`
-
-const Form = styled.div`
-  background-color: #e5e5e5;
-  box-shadow: #000000 0 0 4px;
-  padding: 32px;
-  border-radius: 8px;
-  height: 300px;
-  width: 300px;
-
-  .field {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 33%;
-  }
-
-  label {
-    font-weight: bold;
-    align-self: flex-start;
-    margin-bottom: 8px;
-  }
-
-  input {
-    border: none;
-    border-radius: 4px;
-    font-size: 20px;
-    width: 100%;
-    height: 28px;
-  }
-`
-
-
 class App extends React.Component {
   state = {
-    toExchangeComponent: true,
+    currentComponent: "ListUsers",
   }
 
   changeComponent = () => {
-    this.setState({ toExchangeComponent: !this.state.toExchangeComponent })
+    if (this.state.currentComponent === "CreateUser") {
+      this.setState({ currentComponent:  "ListUsers"})
+    } else {
+      this.setState({ currentComponent:  "CreateUser"})
+    }
   }
-
-
+  
   render() {
     const buttonName =
-      this.state.toExchangeComponent === false
+      this.state.currentComponent === "CreateUser"
         ? "Ir para lista"
         : "Ir para cadastro";
+
+    const showRrendering = () => {
+      switch (this.state.currentComponent) {
+        case "CreateUser":
+          return <CreateUser />
+        case "ListUsers":
+          return <ListUsers />
+        default:
+          return <p>Seja bem vindo(a)</p>;
+      }
+    }
     return (
       <div className="App">
         <div>
@@ -73,11 +47,7 @@ class App extends React.Component {
         </div>
 
         <div>
-          {this.state.toExchangeComponent ?
-          <ListUsers />
-          :
-          <CreateUser />
-          }
+          {showRrendering()}
         </div>
       </div>
     );

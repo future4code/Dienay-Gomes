@@ -94,6 +94,7 @@ class CreateUser extends React.Component {
                 <div className="field">
                   <label>Nome</label>
                   <input
+                    type="text"
                     value={this.state.userValue}
                     onChange={this.onChangeUserValue}
                     placeholder={"Nome de Usuário"}
@@ -102,6 +103,7 @@ class CreateUser extends React.Component {
                 <div className="field">
                   <label>E-mail</label>
                   <input
+                    type="email"
                     value={this.state.emailValue}
                     onChange={this.onChangeEmailValue}
                     placeholder={"E-mail do usuário"}

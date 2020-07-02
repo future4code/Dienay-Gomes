@@ -6,6 +6,10 @@ import icon from '../icons/trash.svg'
 const baseUrl =
   "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
 
+const TitleUsers = styled.h2`
+  margin-left:16px;
+`
+
 const Carregando = styled.div`
   display: flex;
   align-items: center;
@@ -109,7 +113,7 @@ class ListUsers extends React.Component {
     render() {
         return (
             <div>
-                <h2>Usuários Cadastrados:</h2>
+                <TitleUsers>Usuários Cadastrados:</TitleUsers>
                 <List>
                     {this.state.userList.length === 0 && <Carregando>
                       <div class="dots">
