@@ -304,36 +304,36 @@
 // montanhaRussaDoTerror(pessoas)
 
 //b.
-// const pessoas = [
-// 	{ nome: "Paula", idade: 12, altura: 1.8},
-// 	{ nome: "João", idade: 20, altura: 1.3},
-// 	{ nome: "Pedro", idade: 15, altura: 1.9},
-// 	{ nome: "Luciano", idade: 22, altura: 1.8},
-// 	{ nome: "Artur", idade: 10, altura: 1.2},
-// 	{ nome: "Soter", idade: 70, altura: 1.9}
-// ]
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
 
-// function montanhaRussaDoTerror(array) {
-//     const alturaNaoPode = array.filter((e, i, a) => {
-//         if((e.altura < 1.5)) {
-//             return e
-//         }
-//     })
+function montanhaRussaDoTerror(array) {
+    const alturaNaoPode = array.filter((e, i, a) => {
+        if((e.altura < 1.5)) {
+            return e
+        }
+    })
 
-//     const idadeMenor = array.filter((e, i, a) => {
-//         return e.idade < 15
-//     })
+    const idadeMenor = array.filter((e, i, a) => {
+        return e.idade < 15
+    })
 
-//     const idoso = array.filter((e, i, a) => {
-//         return e.idade > 59
-//     })
+    const idoso = array.filter((e, i, a) => {
+        return e.idade > 59
+    })
 
-//     const impedidos = alturaNaoPode.concat(idadeMenor, idoso)
+    const impedidos = alturaNaoPode.concat(idadeMenor, idoso)
 
-//     console.log("Esses não poder entrar na montanha russa", impedidos)
-// }
+    console.log("Esses não poder entrar na montanha russa", impedidos)
+}
 
-// montanhaRussaDoTerror(pessoas)
+montanhaRussaDoTerror(pessoas)
 
 // EXERCÍCIO 4
 // const consultas = [
