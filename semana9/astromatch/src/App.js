@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import './App.css'
+import AppBar from './components/AppBar/AppBar'
+import Home from './components/Home/Home'
+import MatchPage from './components/MatchPage/MatchPage'
 
 function App() {
+  const [trocarTela, setTrocarTela] = useState(true)
+  const onClickTrocarTela = () => {
+    setTrocarTela(!trocarTela)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AppBar trocaTela={onClickTrocarTela}/>
+      {trocarTela === true ? <Home /> : <MatchPage />}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
