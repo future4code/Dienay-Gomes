@@ -1,12 +1,12 @@
 import React from 'react'
+import {TopBar} from './style'
 
 function AppBar(props) {
-  console.log(props.trocaTela)
   return (
-    <div>
+    <TopBar>
       <h1>Astromatch</h1>
       <button onClick={props.trocaTela}>trocar</button>
-    </div>
+    </TopBar>
   )
 }
 
