@@ -5,3 +5,6 @@ export const Tela = styled.div `
         max-width: 260px;
     }
 `
+export const Choice = styled.div`
+    
+`

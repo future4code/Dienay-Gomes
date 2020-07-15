@@ -5,6 +5,8 @@ import Home from './components/Home/Home'
 import MatchPage from './components/MatchPage/MatchPage'
 import styled from 'styled-components'
 
+const baseURL = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/dienay/"
+
 const Tela = styled.div`
   align-items: center;
   display:flex;
@@ -31,7 +33,7 @@ function App() {
     <Tela>
       <section>
         <AppBar trocaTela={onClickTrocarTela}/>
-        {trocarTela === true ? <Home /> : <MatchPage />}
+        {trocarTela === true ? <Home baseURL={baseURL}/> : <MatchPage baseURL={baseURL}/>}
       </section>
     </Tela>
   )
