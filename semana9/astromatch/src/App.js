@@ -4,6 +4,7 @@ import AppBar from './components/AppBar/AppBar'
 import Home from './components/Home/Home'
 import MatchPage from './components/MatchPage/MatchPage'
 import styled from 'styled-components'
+import ClearMatches from './components/ClearMatches/ClearMatches'
 
 const baseURL = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/dienay/"
 
@@ -35,6 +36,7 @@ function App() {
         <AppBar trocaTela={onClickTrocarTela}/>
         {trocarTela === true ? <Home baseURL={baseURL}/> : <MatchPage baseURL={baseURL}/>}
       </section>
+      <ClearMatches baseURL={baseURL}/>
     </Tela>
   )
 }

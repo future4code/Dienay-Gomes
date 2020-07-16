@@ -26,13 +26,12 @@ function Home(props) {
 
     axios
     .post(`${props.baseURL}choose-person`, body).then(response => {
-      console.log(response)
       getProfileToChoose()
     }).catch(error => {
       console.log(error)
     })
   }
-
+  
   return (
     <Tela>
         <img src={profile.photo} />
