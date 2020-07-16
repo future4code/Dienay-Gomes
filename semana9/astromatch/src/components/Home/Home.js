@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import {Tela,Choice} from './style'
+import {Tela, Profile, Info, Choice, Photo} from './style'
+import Like from '@material-ui/icons/ThumbUp'
+import Nope from '@material-ui/icons/ThumbDown'
 
 function Home(props) {
   const [profile, setProfile] = useState([])
@@ -34,13 +36,25 @@ function Home(props) {
   
   return (
     <Tela>
-        <img src={profile.photo} />
-        <h2>{profile.name},</h2>
-        <p>{profile.age}</p>
-        <p>{profile.bio}</p>
+        <Profile>
+          <Photo backPhoto={profile.photo} >
+            <img src={profile.photo} alt="Foto de perfil"/>
+          </Photo>
+          <Info>
+            <div>
+              <p>{profile.name},</p>
+              <p>{profile.age}</p>
+            </div>
+            <p>{profile.bio}</p>
+          </Info>
+        </Profile>
         <Choice>
-          <button onClick={() => choosePerson(profile.id, false)}>descurtir</button>
-          <button onClick={() => choosePerson(profile.id, true)}>curtir</button>
+          <span onClick={() => choosePerson(profile.id, false)}>
+            <Nope />
+          </span>
+          <span onClick={() => choosePerson(profile.id, true)}>
+            <Like />
+          </span>
         </Choice>
     </Tela>
   )

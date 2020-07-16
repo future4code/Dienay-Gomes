@@ -6,9 +6,9 @@ import MatchPage from './components/MatchPage/MatchPage'
 import styled from 'styled-components'
 import ClearMatches from './components/ClearMatches/ClearMatches'
 
-const baseURL = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/dienay/"
+const baseURL = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/west/"
 
-const Tela = styled.div`
+const TelaApp = styled.div`
   align-items: center;
   display:flex;
   height: 100vh;
@@ -18,7 +18,6 @@ const Tela = styled.div`
   section {
     border: 1px solid #000;
     border-radius: 4px;
-    display: grid;
     height: 600px;
     width: 400px;
   }
@@ -31,13 +30,13 @@ function App() {
   }
 
   return (
-    <Tela>
+    <TelaApp>
       <section>
-        <AppBar trocaTela={onClickTrocarTela}/>
+        <AppBar trocaTela={onClickTrocarTela} trocouTela={trocarTela}/>
         {trocarTela === true ? <Home baseURL={baseURL}/> : <MatchPage baseURL={baseURL}/>}
       </section>
       <ClearMatches baseURL={baseURL}/>
-    </Tela>
+    </TelaApp>
   )
 }
 
