@@ -19,18 +19,22 @@ function MatchPage(props) {
   }
 
   return (
-    <ListMatch>
-      <ul>
-        {matches.map(pessoa => {
-          return (
-            <li key={pessoa.id}>
-              <img src={pessoa.photo} alt={'foto de perfil'} />
-              <p>{pessoa.name}</p>
-            </li>
-          )
-        })}
-      </ul>
-    </ListMatch>
+    <div>
+      {matches === "" ? <p>carregando... </p> :
+        <ListMatch>
+          <ul>
+            {matches.map(pessoa => {
+              return (
+                <li key={pessoa.id}>
+                  <img src={pessoa.photo} alt={'foto de perfil'} />
+                  <p>{pessoa.name}</p>
+                </li>
+              )
+            })}
+          </ul>
+        </ListMatch>
+      }
+    </div>
   )
 }
 

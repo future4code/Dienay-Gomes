@@ -1,17 +1,17 @@
 import React from 'react'
-import {TopBar, LogoAstro} from './style'
+import {TopBar, LogoAstro, SpanIcon} from './style'
 import Logo from '../../images/logo.svg'
-import Change from '@material-ui/icons/DoneAll'
-import Return from '@material-ui/icons/Reply'
+import ReturnIcon from '../../images/icons/reply.svg'
+import ChangeIcon from '../../images/icons/done.svg'
 
 function AppBar(props) {
   return (
     <TopBar>
-      {props.trocouTela === true ? <span></span> : <span><Return className="pointer" onClick={props.trocaTela} /></span>}
+      {props.trocouTela === true ? <span></span> : <SpanIcon><img src={ReturnIcon} onClick={props.trocaTela} alt="Return"/></SpanIcon>}
   
       <h1><LogoAstro src={Logo} alt="Logo" /></h1>
 
-      {props.trocouTela === false ? <span></span> : <span><Change className="pointer" onClick={props.trocaTela} /></span>}
+      {props.trocouTela === false ? <span></span> : <SpanIcon><img src={ChangeIcon} onClick={props.trocaTela} alt="Matches"/></SpanIcon>}
     </TopBar>
   )
 }

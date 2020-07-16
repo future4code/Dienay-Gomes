@@ -9,9 +9,16 @@ export const TopBar = styled.div `
     width: 100%;
 
     span {
-        cursor: pointer;
+        height: 24px;
         width: 24px;
+
+        img {
+            width: 24px;
+        }
     }
+`
+export const SpanIcon = styled.span`
+    cursor: pointer;
 `
 
 export const LogoAstro = styled.img `

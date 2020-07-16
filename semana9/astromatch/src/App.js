@@ -6,7 +6,7 @@ import MatchPage from './components/MatchPage/MatchPage'
 import styled from 'styled-components'
 import ClearMatches from './components/ClearMatches/ClearMatches'
 
-const baseURL = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/west/"
+const baseURL = "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/dienay/"
 
 const TelaApp = styled.div`
   align-items: center;
