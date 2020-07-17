@@ -7,6 +7,7 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="390"
@@ -17,7 +18,29 @@
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
    sodipodi:docname="like.svg">
   <defs
-     id="defs2" />
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient828">
+      <stop
+         style="stop-color:#f04969;stop-opacity:1;"
+         offset="0"
+         id="stop824" />
+      <stop
+         style="stop-color:#f04969;stop-opacity:0;"
+         offset="1"
+         id="stop826" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient828"
+       id="linearGradient830"
+       x1="9.9343744"
+       y1="268.68198"
+       x2="94.932127"
+       y2="268.68198"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
   <sodipodi:namedview
      id="base"
      pagecolor="#ffffff"
@@ -26,7 +49,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4"
-     inkscape:cx="250.47358"
+     inkscape:cx="203.43625"
      inkscape:cy="115.60358"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
@@ -34,9 +57,9 @@
      showguides="true"
      inkscape:guide-bbox="true"
      inkscape:snap-global="false"
-     inkscape:window-width="1024"
-     inkscape:window-height="744"
-     inkscape:window-x="1366"
+     inkscape:window-width="1366"
+     inkscape:window-height="720"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      units="px">
@@ -64,7 +87,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -73,39 +96,35 @@
      inkscape:groupmode="layer"
      id="layer1"
      transform="translate(0,-240.90835)">
-    <g
-       id="g18"
-       transform="translate(116.52952,96.751568)">
-      <text
-         inkscape:export-ydpi="278.7688"
-         inkscape:export-xdpi="278.7688"
-         id="text16"
-         y="190.33354"
-         x="-111.35542"
-         style="font-style:normal;font-weight:normal;font-size:49.07502365px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#71d6b6;fill-opacity:1;stroke:none;stroke-width:0.65725482"
-         xml:space="preserve"><tspan
-           style="fill:#71d6b6;fill-opacity:1;stroke-width:0.65725482"
-           y="190.33354"
-           x="-111.35542"
-           id="tspan14"
-           sodipodi:role="line">Like</tspan></text>
-      <rect
-         y="128.62019"
-         x="-126.15121"
-         height="83.92263"
-         width="128.82391"
-         id="rect30"
-         style="fill:none;stroke:#ffffff;stroke-width:0.26458332" />
-      <rect
-         inkscape:export-ydpi="278.7688"
-         inkscape:export-xdpi="278.7688"
-         ry="6.8376608"
-         y="146.62152"
-         x="-113.84623"
-         height="51.483562"
-         width="98.140541"
-         id="rect50"
-         style="fill:none;stroke:#71d6b6;stroke-width:3.18538284;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
-    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:49.07502365px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#71d6b6;fill-opacity:1;stroke:none;stroke-width:0.65725482;"
+       x="5.1740971"
+       y="287.08511"
+       id="text16"
+       inkscape:export-xdpi="278.7688"
+       inkscape:export-ydpi="278.7688"><tspan
+         sodipodi:role="line"
+         id="tspan14"
+         x="5.1740971"
+         y="287.08511"
+         style="fill:#71d6b6;fill-opacity:1;stroke-width:0.65725482;stroke:none;">Like</tspan></text>
+    <rect
+       style="fill:none;stroke:#ffffff;stroke-width:0.26458332"
+       id="rect30"
+       width="128.82391"
+       height="83.92263"
+       x="-9.6216869"
+       y="225.37177" />
+    <rect
+       style="fill:none;stroke:#71d6b6;stroke-width:3.18538284;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect50"
+       width="98.140541"
+       height="51.483562"
+       x="2.6832905"
+       y="243.37309"
+       ry="6.8376608"
+       inkscape:export-xdpi="278.7688"
+       inkscape:export-ydpi="278.7688" />
   </g>
 </svg>

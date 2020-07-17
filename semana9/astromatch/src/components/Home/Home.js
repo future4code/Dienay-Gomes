@@ -4,9 +4,13 @@ import {Tela, Profile, Info, Choice, BackgroundPhoto, PhotoProfile, Like, Nope} 
 import LikeIcon from '../../images/icons/like.svg'
 import NopeIcon from '../../images/icons/nope.svg'
 import Load from '../Load/Load'
+import LikeChoice from '../LikeNopeChoice/LikeChoice'
+import NopeChoice from '../LikeNopeChoice/NopeChoice'
 
 function Home(props) {
   const [profile, setProfile] = useState("")
+  const [showLike, setShowLike] = useState(false)
+  const [showNope, setShowNope] = useState(false)
 
   useEffect(() => {
     getProfileToChoose()
@@ -22,7 +26,20 @@ function Home(props) {
   }
 
   const choosePerson = (idPerson, choose) => {
-    const body = {
+    if(choose === true){
+      setShowLike(true)
+      setTimeout(() => {
+        setShowLike(false)
+      }, 2000)
+    } else {
+      setShowNope(true)
+      setTimeout(() => {
+        setShowNope(false)
+      }, 2000)
+    }
+
+    setTimeout(() => {
+      const body = {
         id: idPerson,
         choice: choose
     }
@@ -33,6 +50,7 @@ function Home(props) {
     }).catch(error => {
       console.log(error)
     })
+    }, 1000)
   }
   
   return (
@@ -42,6 +60,8 @@ function Home(props) {
             <Profile>
               <BackgroundPhoto backPhoto={profile.photo} ></BackgroundPhoto>
               <PhotoProfile>
+              {showLike === true ? <LikeChoice /> : < ></ >}
+              {showNope === true ? <NopeChoice /> : < ></ >}
                 <img src={profile.photo} alt="Foto de perfil"/>
               </PhotoProfile>
               <Info>
