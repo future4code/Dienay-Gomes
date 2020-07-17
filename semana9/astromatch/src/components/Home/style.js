@@ -6,38 +6,39 @@ export const Tela = styled.div `
     position: relative;
 `
 export const Profile = styled.div`
-align-items: center;
-flex-wrap: wrap;
-border-radius: 4px;
-box-shadow: 0 0 4px #111111;
-height: 420px;
-justify-content: center;
-position: relative;
-width: 368px;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 0 4px #111111;
+    flex-wrap: wrap;
+    height: 420px;
+    justify-content: center;
+    position: relative;
+    width: 368px;
 `
 
 export const BackgroundPhoto = styled.div`
-    position: relative;
     align-items: center;
     background-image: url(${props => props.backPhoto});
     background-size: (cover);
     background-attachment: fixed;
-    filter: blur(10px);
-    opacity: .9;
     border-radius: 4px;
     display: flex;
+    filter: blur(10px);
     height: 420px;
     justify-content: center;
+    opacity: .9;
+    position: relative;
     width: 368px;
 `
 export const PhotoProfile = styled.div`
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
     position: absolute;
     top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    height: 100%;
+
     img {
         object-fit: cover;
         object-position: center;
@@ -68,24 +69,36 @@ export const Info = styled.div`
 `
 
 export const Choice = styled.div`
-    display: flex;
     align-items: center;
-    justify-content: space-around;
+    display: flex;
     height: 110px;
+    justify-content: space-around;
 
     span {
+        align-items: center;
         border: 1px solid #ff0000;
         border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         cursor: pointer;
-        width: 60px;
+        display: flex;
         height: 60px;
+        justify-content: center;
+        width: 60px;
+    }
+
+    span:hover {
+        background-color: rgba(240, 73, 105, .4);
+        border: 1px solid rgba(240, 73, 105, .4);
+        transition: 350ms;
     }
 
     span:last-of-type {
         border: 1px solid #008000;
+    }
+
+    span:last-of-type:hover {
+        background-color: rgba(113, 214, 182, .4);
+        border: 1px solid rgba(113, 214, 182, .4);
+        transition: 350ms;
     }
 `
 

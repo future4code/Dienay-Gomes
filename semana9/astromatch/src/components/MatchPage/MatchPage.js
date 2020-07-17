@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import {ListMatch} from './style'
 import axios from 'axios'
+import Load from '../Load/Load'
 
 function MatchPage(props) {
-  const [matches, setMatches] = useState([])
+  const [matches, setMatches] = useState("")
 
   useEffect(() => {
     getMatches()
@@ -20,7 +21,7 @@ function MatchPage(props) {
 
   return (
     <div>
-      {matches === "" ? <p>carregando... </p> :
+      {matches === "" ? <Load /> :
         <ListMatch>
           <ul>
             {matches.map(pessoa => {

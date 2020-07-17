@@ -1,15 +1,27 @@
 import styled from 'styled-components'
 
 export const ListMatch = styled.div`
-    li {
-        display: flex;
-        list-style: none;
-        align-items: center;
+    ul {
+        padding: 8px;
     }
+
+    li {
+        align-items: center;
+        display: flex;
+        cursor: pointer;
+        list-style: none;
+        padding: 8px;
+    }
+
+    li:hover {
+        background-color: rgba(113, 214, 182, .2);
+        transition: 350ms;
+    }
+
     img {
-        width: 40px;
-        height: 40px;
         border-radius: 50%;
+        height: 40px;
         margin-right: 8px;
+        width: 40px;
     }
 `
