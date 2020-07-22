@@ -22,16 +22,7 @@ export const ContainerHome = styled.div`
     }
 
     h1 {
-        color: #484CAD;
         font-size: 6em;
         margin: 0;
-    }
-
-    p {
-        color: #484CAD; 
-    }
-
-    button {
-        margin-bottom: 16px;
     }
 `
