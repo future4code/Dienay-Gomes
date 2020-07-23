@@ -1,12 +1,15 @@
 import React from 'react';
-
-// import { Container } from './styles';
+import { Container } from '../Common/Container/ContainerStyled';
+import SideBar from '../Common/Container/SideBar';
 
 function TripDetailsPage() {
   return (
-      <div>
+      <Container>
+        <SideBar />
+        <div>
           TripDetailsPage
-      </div>
+        </div>
+      </Container>
   )
 }
 

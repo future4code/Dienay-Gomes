@@ -29,7 +29,7 @@ const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay
      .post(`${baseUrl}/login`, body)
      .then(response => {
        window.localStorage.setItem("token", response.data.token)
-       history.replace("/create")
+       history.replace("/")
      })
      .catch(err => {
        console.log(err.message)

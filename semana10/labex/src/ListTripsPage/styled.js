@@ -1,20 +1,5 @@
 import styled from 'styled-components'
 
-export const ContainerListTrips = styled.div`
-    color: #484CAD;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    height: 100vh;
-    position: relative;
-
-    sidebar {
-        background-color: #484CAD;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-`
 export const ListTrips = styled.div`
     display: flex;
     flex-direction: column;
