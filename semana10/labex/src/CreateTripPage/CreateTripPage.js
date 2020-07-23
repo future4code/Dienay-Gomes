@@ -3,8 +3,19 @@
  import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
+
+const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay"
  
  function CreateTripPage() {
+   const history = useHistory()
+
+   useEffect(() => {
+     const token = window.localStorage.getItem("token")
+
+     if (token === null) {
+       history.push("/login")
+     }
+   }, [history])
    return (
     <ContainerCreatePage>
            <Form>

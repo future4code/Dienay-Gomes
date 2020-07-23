@@ -1,27 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { ContainerLogin, Quit } from './styled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom'
+import axios from 'axios'
+
+const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay"
 
  function LoginPage() {
+   const [email, setEmail] = useState("")
+   const [password, setPassword] =useState("")
    const history = useHistory()
 
-   const goToHomePage = () => {
-     history.push("/")
+   const onChangeEmail = event => {
+     setEmail(event.target.value)
    }
 
-   const goToCreateTripPage = () => {
-     history.replace("/create")
+   const onChangePassword = event => {
+     setPassword(event.target.value)
    }
+
+   const handleLogin = () => {
+     const body = {
+       email: email,
+       password: password
+     }
+
+     axios
+     .post(`${baseUrl}/login`, body)
+     .then(response => {
+       window.localStorage.setItem("token", response.data.token)
+       history.replace("/create")
+     })
+     .catch(err => {
+       console.log(err.message)
+     })
+   }
+
+   const goToHomePage = () => {
+    history.push("/")
+  }
 
    return (
     <ContainerLogin>
         <div>
           <Quit onClick={goToHomePage} >X</Quit>
           <h2>Login</h2>
-          <input type="text" placeholder="usuário/e-mail" />
-          <input type="text" placeholder="senha" />
-          <Button onClick={goToCreateTripPage} variant="contained" color="primary">Entrar</Button>
+          <input value={email} onChange={onChangeEmail} type="text" placeholder="usuário/e-mail" />
+          <input value={password} onChange={onChangePassword} type="text" placeholder="senha" />
+          <Button onClick={handleLogin} variant="contained" color="primary">Entrar</Button>
         </div>
     </ContainerLogin>
    )
