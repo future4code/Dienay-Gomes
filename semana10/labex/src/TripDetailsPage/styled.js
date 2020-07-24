@@ -28,35 +28,24 @@ export const Item = styled.li`
 `
 
 export const CardDetail = styled.div`
-    align-items: center;
     display: flex;
     height: 100%;
     justify-content: center;
     width: 100%;
-    
-    section {
-        align-items: center;
-        border: 1px solid #484CAD;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        height: 400px;
-        justify-content: space-evenly;
-        padding: 8px 32px;
-        position: relative;
-        width: 450px;
-    }
-
-    div {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
 
     div > span {
         max-width: 60%;
     }
 `
+export const Details = styled.div`
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 32px;
+    position: relative;
+    width: 100%;
+`
+
 export const Quit = styled.span`
     cursor: pointer;
     position: absolute;

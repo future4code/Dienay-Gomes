@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { ListTrips, Item, CardDetail, Quit } from './styled'
+import { ListTrips, Item, CardDetail, Details, Quit } from './styled'
 import { Container } from '../Common/Container/ContainerStyled'
-import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
 
-const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay/trips"
+const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay"
  
 function TripDetailsPage() {
   const [list, setList] = useState("")
+  const [detailTrip, setDetailTrip] = useState({})
+  const [candidates, setCandidates] = useState([])
 
   const [showCard, setShowCard] = useState(false)
-  const [name, setName] = useState([])
-  const [planet, setPlanet] = useState([])
-  const [date, setDate] = useState([])
-  const [description, setDescription] = useState([])
+  const [name, setName] = useState("")
+  const [planet, setPlanet] = useState("")
+  const [date, setDate] = useState("")
+  const [description, setDescription] = useState("")
 
   const history = useHistory()
-
-  const goToApplicationFormPage = () => {
-    history.push("/application-form")
-  }
 
   useEffect(() => {
     getListTrips()
@@ -37,7 +34,7 @@ function TripDetailsPage() {
 
   const getListTrips = () => {
     axios
-    .get(baseUrl)
+    .get(`${baseUrl}/trips`)
     .then(response => {
       setList(response.data.trips)
     })
@@ -46,7 +43,25 @@ function TripDetailsPage() {
     })
   }
 
-  const getTripToDetail = (name, planet, date, description) => {
+  const token = window.localStorage.getItem("token")
+
+  const getTripToDetail = (idTrip) => {
+    axios
+    .get(`${baseUrl}/trip/${idTrip}`,
+      {
+        headers: {
+          auth: token
+        }
+      }
+    )
+    .then(response => {
+      setDetailTrip(response.data.trip)
+      setCandidates(response.data.trip.candidates)
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
+
     setName(name)
     setPlanet(planet)
     setDate(date)
@@ -78,11 +93,7 @@ function TripDetailsPage() {
               return (
               <Item
                 key={travel.id}
-                onClick={() => getTripToDetail(
-                  travel.name,
-                  travel.planet,
-                  travel.date,
-                  travel.description)}
+                onClick={() => getTripToDetail(travel.id)}
               >
                 <p>{travel.name}</p>
                 <p>{travel.planet}</p>
@@ -94,14 +105,27 @@ function TripDetailsPage() {
         </ListTrips>
         :
         <CardDetail>
-          <section>
-            <Quit onClick={cardShowHide}>X</Quit>
-            <h2>{name}</h2>
-            <div><span>Planeta: </span><span>{planet}</span></div>
-            <div><span>Data: </span><span>{date}</span></div>
-            <div><span>Descrição: </span><span>{description}</span></div>
-            <Button onClick={goToApplicationFormPage} variant="contained" color="primary">Candidatar-se</Button>
-          </section>
+          <Details>
+            <Quit onClick={cardShowHide}>Voltar</Quit>
+            <h2>{detailTrip.name}</h2>
+            <p>Planeta: {detailTrip.planet}</p>
+            <p>Data: {detailTrip.date}</p>
+            <p>Duração em dias: {detailTrip.durationInDays}</p>
+            <p>Descrição: {detailTrip.description}</p>
+            <ul>
+              {candidates.map(human => {
+                return (
+                <li>
+                  <p>Nome: {human.name}</p>
+                  <p>Idade: {human.age}</p>
+                  <p>Profissão: {human.profession}</p>
+                  <p>País: {human.country}</p>
+                  <p>Bio: {human.applicationText}</p>
+                </li>
+                )
+              })}
+            </ul>
+          </Details>
         </CardDetail>
         }</>
       }

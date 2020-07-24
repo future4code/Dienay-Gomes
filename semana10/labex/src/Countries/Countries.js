@@ -7,11 +7,11 @@ const Container = styled.div`
     }
 `
 
-function Countries() {
+function Countries(props) {
 
   return (
     <Container>
-      <select name="countries" id="countries">
+      <select onChange={props.onChangeCountry} name="countries" id="countries">
             <option value="Brasil" selected="selected">Brasil</option>
             <option value="Afeganistão">Afeganistão</option>
             <option value="África do Sul">África do Sul</option>
