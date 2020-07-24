@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
+import Countries from '../Countries/Countries';
 
 const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay/trips"
 
@@ -52,7 +53,7 @@ function ApplicationFormPage() {
 
                 <Field>
                   <label>País</label>
-                  <input type="text" placeholder="Brasil" />
+                  <Countries />
                 </Field>
               </FieldGroup>
               

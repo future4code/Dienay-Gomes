@@ -35,17 +35,21 @@ export const Field = styled.span`
         border: 1px solid #484CAD;
         border-radius: 8px;
         height: 30px;
+        outline: none;
     }
 
     select {
+        background-color: white;
         border: 1px solid #484CAD;
         border-radius: 8px;
-        height: 24px;
+        height: 35px;
+        outline: none;
     }
 
     textarea {
         border: 1px solid #484CAD;
         border-radius: 8px;
+        outline: none;
     }
 `
 

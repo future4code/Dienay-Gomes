@@ -30,6 +30,7 @@ export const ContainerLogin = styled.div`
         border: 1px solid #484CAD;
         border-radius: 8px;
         height: 24px;
+        outline: none;
     }
 `
 export const Quit = styled.span`
