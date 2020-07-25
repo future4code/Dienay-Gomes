@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { ContainerLogin, Quit } from './styled'
+import { ContainerLogin } from './styled'
+import { Quit } from '../Common/Container/ContainerStyled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
+import { baseUrl } from '../Common/CommonConst'
 
-const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay"
 
  function LoginPage() {
    const [email, setEmail] = useState("")
@@ -45,9 +46,11 @@ const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay
         <div>
           <Quit onClick={goToHomePage} >X</Quit>
           <h2>Login</h2>
-          <input value={email} onChange={onChangeEmail} type="text" placeholder="usuário/e-mail" />
-          <input value={password} onChange={onChangePassword} type="text" placeholder="senha" />
-          <Button onClick={handleLogin} variant="contained" color="primary">Entrar</Button>
+          <form>
+            <input value={email} onChange={onChangeEmail} type="email" placeholder="usuário/e-mail" />
+            <input value={password} onChange={onChangePassword} type="password" placeholder="senha" />
+            <Button onClick={handleLogin} variant="contained" color="primary">Entrar</Button>
+          </form>
         </div>
     </ContainerLogin>
    )

@@ -1,12 +1,11 @@
- import React, { useEffect, useState } from 'react';
- import { Quit } from './styled';
- import { Container, Field, ContainerForm} from '../Common/Container/ContainerStyled'
- import Button from '@material-ui/core/Button'
+import React, { useEffect, useState } from 'react'
+import { Container, Form, FieldGroup, Field, ContainerForm, Quit } from '../Common/Container/ContainerStyled'
+import { DateInput } from './styled'
+import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
-
-const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay"
+import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
  
  function CreateTripPage() {
    const [name, setName] = useState("")
@@ -38,10 +37,8 @@ const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay
 
    const history = useHistory()
 
-   const token = window.localStorage.getItem("token")
-
    useEffect(() => {
-     const token = window.localStorage.getItem("token")
+     
 
      if (token === null) {
        history.push("/login")
@@ -58,13 +55,7 @@ const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay
     }
 
     axios
-    .post(`${baseUrl}/trips`, body, 
-      {
-        headers: {
-          auth: token
-        }
-      }
-    )
+    .post(`${baseUrl}/trips`, body, axiosConfig)
     .then(response => {
       console.log(response.data.token)
     })
@@ -76,7 +67,7 @@ const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay
     <Container>
             <SideBar />
            <ContainerForm>
-            <form>
+            <Form>
               <Quit onClick={''} >X</Quit>
               <h2>Cria nova viagem</h2>
               <Field>
@@ -99,25 +90,27 @@ const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay
                 />
               </Field>
 
-              <Field>
-                <label>Data</label>
-                <input
-                  type="date"
-                  name="date"
-                  onChange={onChangeDate}
-                  required
-                />
-              </Field>
-              
-              <Field>
-                <label>Duração</label>
-                <input
-                  type="number"
-                  name="durationInDays"
-                  onChange={onChangeDurationInDays}
-                  required
-                />
-              </Field>
+              <FieldGroup>
+                <Field>
+                  <label>Data</label>
+                  <DateInput
+                    type="date"
+                    name="date"
+                    onChange={onChangeDate}
+                    required
+                  />
+                </Field>
+                
+                <Field>
+                  <label>Duração</label>
+                  <input
+                    type="number"
+                    name="durationInDays"
+                    onChange={onChangeDurationInDays}
+                    required
+                  />
+                </Field>
+              </FieldGroup>
               
               <Field>
                 <label>Descrição</label>
@@ -129,7 +122,7 @@ const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay
               </Field>
 
               <Button onClick={handleCreate} variant="contained" color="primary">Criar</Button>
-            </form>
+            </Form>
           </ContainerForm>
        </Container>
    )

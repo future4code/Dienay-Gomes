@@ -4,8 +4,7 @@ import { Container } from '../Common/Container/ContainerStyled'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
-
-const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay"
+import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
  
 function TripDetailsPage() {
   const [list, setList] = useState("")
@@ -13,10 +12,6 @@ function TripDetailsPage() {
   const [candidates, setCandidates] = useState([])
 
   const [showCard, setShowCard] = useState(false)
-  const [name, setName] = useState("")
-  const [planet, setPlanet] = useState("")
-  const [date, setDate] = useState("")
-  const [description, setDescription] = useState("")
 
   const history = useHistory()
 
@@ -25,7 +20,6 @@ function TripDetailsPage() {
   },[])
 
   useEffect(() => {
-    const token = window.localStorage.getItem("token")
 
     if (token === null) {
       history.push("/login")
@@ -43,17 +37,9 @@ function TripDetailsPage() {
     })
   }
 
-  const token = window.localStorage.getItem("token")
-
   const getTripToDetail = (idTrip) => {
     axios
-    .get(`${baseUrl}/trip/${idTrip}`,
-      {
-        headers: {
-          auth: token
-        }
-      }
-    )
+    .get(`${baseUrl}/trip/${idTrip}`, axiosConfig)
     .then(response => {
       setDetailTrip(response.data.trip)
       setCandidates(response.data.trip.candidates)
@@ -62,10 +48,6 @@ function TripDetailsPage() {
       console.log(err.message)
     })
 
-    setName(name)
-    setPlanet(planet)
-    setDate(date)
-    setDescription(description)
     cardShowHide()
   }
 
@@ -121,6 +103,8 @@ function TripDetailsPage() {
                   <p>Profissão: {human.profession}</p>
                   <p>País: {human.country}</p>
                   <p>Bio: {human.applicationText}</p>
+                  <button>Confirmar</button>
+                  <button>Recusar</button>
                 </li>
                 )
               })}

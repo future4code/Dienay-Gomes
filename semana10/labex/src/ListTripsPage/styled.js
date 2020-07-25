@@ -57,9 +57,3 @@ export const CardDetail = styled.div`
         max-width: 60%;
     }
 `
-export const Quit = styled.span`
-    cursor: pointer;
-    position: absolute;
-    right: 8px;
-    top: 8px;
-`

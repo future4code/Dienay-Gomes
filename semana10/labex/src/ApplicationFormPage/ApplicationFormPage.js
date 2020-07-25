@@ -1,13 +1,11 @@
 import React, { useEffect, useState }  from 'react';
-import { FieldGroup, Quit } from './styled';
-import { Container, Field, ContainerForm } from '../Common/Container/ContainerStyled'
+import { Container,Form, FieldGroup, Field, ContainerForm, Quit } from '../Common/Container/ContainerStyled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
 import Countries from '../Countries/Countries';
-
-const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay/trips"
+import { baseUrl } from '../Common/CommonConst'
 
 function ApplicationFormPage() {
   const [list, setList] = useState([])
@@ -50,7 +48,7 @@ function ApplicationFormPage() {
 
   const getListTrips = () => {
     axios
-    .get(baseUrl)
+    .get(`${baseUrl}/trips`)
     .then(response => {
       setList(response.data.trips)
     })
@@ -82,7 +80,7 @@ function ApplicationFormPage() {
        <Container>
             <SideBar />
            <ContainerForm>
-            <form>
+            <Form>
               <Quit onClick={goToListTripsPage} >X</Quit>
               <h2>Informações do candidato</h2>
               <Field>
@@ -139,7 +137,7 @@ function ApplicationFormPage() {
               </Field>
 
               <Button onClick={handleApplication} variant="contained" color="primary">Candidatar-se</Button>
-            </form>
+            </Form>
           </ContainerForm>
        </Container>
    )

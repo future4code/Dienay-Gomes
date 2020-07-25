@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { ListTrips, Item, CardDetail, Quit } from './styled'
-import { Container } from '../Common/Container/ContainerStyled'
+import { ListTrips, Item, CardDetail } from './styled'
+import { Container, Quit } from '../Common/Container/ContainerStyled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
+import { baseUrl } from '../Common/CommonConst'
 
-const baseUrl = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/dienay/trips"
- 
 function ListTripsPage() {
   const [list, setList] = useState("")
 
@@ -29,7 +28,7 @@ function ListTripsPage() {
 
   const getListTrips = () => {
     axios
-    .get(baseUrl)
+    .get(`${baseUrl}/trips`)
     .then(response => {
       setList(response.data.trips)
     })

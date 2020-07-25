@@ -36,6 +36,20 @@ export const CardDetail = styled.div`
     div > span {
         max-width: 60%;
     }
+
+    ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        padding: 16px;
+    }
+
+    li {
+        border: 1px solid rgba(72, 76, 173, .2);
+        border-radius: 4px;
+        list-style: none;
+        padding: 8px;
+    }
 `
 export const Details = styled.div`
     border-radius: 8px;

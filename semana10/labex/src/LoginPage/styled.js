@@ -21,6 +21,14 @@ export const ContainerLogin = styled.div`
         width: 250px;
     }
 
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 60%;
+    }
+
     h2 {
         margin: 0;
     }
@@ -31,10 +39,4 @@ export const ContainerLogin = styled.div`
         height: 24px;
         outline: none;
     }
-`
-export const Quit = styled.span`
-    cursor: pointer;
-    position: absolute;
-    right: 8px;
-    top: 8px;
 `
