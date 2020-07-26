@@ -1,5 +1,5 @@
 import React, { useEffect, useState }  from 'react';
-import { Container,Form, FieldGroup, Field, ContainerForm, Quit } from '../Common/Container/ContainerStyled'
+import { Container,Form, FieldGroup, Field, ContainerForm, Quit } from '../Common/Styles/ContainerStyled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'

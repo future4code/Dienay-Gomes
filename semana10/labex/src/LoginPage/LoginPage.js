@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { ContainerLogin } from './styled'
-import { Quit } from '../Common/Container/ContainerStyled'
+import { Quit } from '../Common/Styles/ContainerStyled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'

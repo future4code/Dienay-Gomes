@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from '../Common/Container/ContainerStyled'
+import { Container } from '../Common/Styles/ContainerStyled'
 import { ContainerHome } from './styled'
 import SideBar from '../Common/Container/SideBar'
 

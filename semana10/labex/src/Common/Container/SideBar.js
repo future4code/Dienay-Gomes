@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ContainerSideBar } from './ContainerStyled'
+import { ContainerSideBar } from '../Styles/ContainerStyled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
 

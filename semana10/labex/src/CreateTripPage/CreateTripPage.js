@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Form, FieldGroup, Field, ContainerForm, Quit } from '../Common/Container/ContainerStyled'
+import { Container, Form, FieldGroup, Field, ContainerForm, Quit } from '../Common/Styles/ContainerStyled'
 import { DateInput } from './styled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
@@ -38,8 +38,6 @@ import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
    const history = useHistory()
 
    useEffect(() => {
-     
-
      if (token === null) {
        history.push("/login")
      }

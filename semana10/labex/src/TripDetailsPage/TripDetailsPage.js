@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ListTrips, Item, CardDetail, Details, Quit } from './styled'
-import { Container } from '../Common/Container/ContainerStyled'
+import { Container } from '../Common/Styles/ContainerStyled'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
@@ -20,7 +20,6 @@ function TripDetailsPage() {
   },[])
 
   useEffect(() => {
-
     if (token === null) {
       history.push("/login")
     }

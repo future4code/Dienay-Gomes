@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ListTrips, Item, CardDetail } from './styled'
-import { Container, Quit } from '../Common/Container/ContainerStyled'
+import { Container, Quit } from '../Common/Styles/ContainerStyled'
 import Button from '@material-ui/core/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
