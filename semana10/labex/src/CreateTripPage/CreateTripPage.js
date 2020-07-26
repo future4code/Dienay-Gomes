@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { Container, Form, FieldGroup, Field, ContainerForm, Quit } from '../Common/Styles/ContainerStyled'
 import { DateInput } from './styled'
-import Button from '@material-ui/core/Button'
+import {Button} from '../Common/Styles/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
-import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
+import { baseUrl, axiosConfig} from '../Common/CommonConst'
  
  function CreateTripPage() {
    const [name, setName] = useState("")
@@ -13,7 +13,15 @@ import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
    const [date, setDate] = useState("")
    const [description, setDescription] = useState("")
    const [durationInDays, setDurationInDays] = useState("")
-
+   
+   const [currentDate, setCurrentDate] = useState("")
+   useEffect (() => {
+      const data = new Date(),
+      day  = (data.getDate()+1).toString().padStart(2, '0'),
+      month  = (data.getMonth()+1).toString().padStart(2, '0'),
+      year  = data.getFullYear()
+      return setCurrentDate(year+"-"+month+"-"+day)
+   },[])
 
    const onChangeName = event => {
      setName(event.target.value)
@@ -22,12 +30,13 @@ import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
     setPlanet(event.target.value)
    }
    const onChangeDate = event => {
-    const data = new Date(event.target.value),
-     day  = (data.getDate()+1).toString().padStart(2, '0'),
-     month  = (data.getMonth()+1).toString().padStart(2, '0'),
-     year  = data.getYear() - 100
+    const date = new Date(event.target.value),
+     day  = (date.getDate()+1).toString().padStart(2, '0'),
+     month  = (date.getMonth()+1).toString().padStart(2, '0'),
+     year  = date.getYear() - 100
      return setDate(day+"/"+month+"/"+year)
    }
+
    const onChangeDescription = event => {
     setDescription(event.target.value)
    }
@@ -37,13 +46,16 @@ import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
 
    const history = useHistory()
 
+   const token = window.localStorage.getItem("token")
+
    useEffect(() => {
      if (token === null) {
        history.push("/login")
      }
    }, [history])
 
-   const handleCreate = () => {
+   const handleCreate = event => {
+    event.preventDefault()
     const body = {
       "name": name,
       "planet": planet,
@@ -55,7 +67,7 @@ import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
     axios
     .post(`${baseUrl}/trips`, body, axiosConfig)
     .then(response => {
-      console.log(response.data.token)
+      history.push("/details")
     })
     .catch(err => {
       console.log(err.message)
@@ -65,7 +77,7 @@ import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
     <Container>
             <SideBar />
            <ContainerForm>
-            <Form>
+            <Form onSubmit={handleCreate}>
               <Quit onClick={''} >X</Quit>
               <h2>Cria nova viagem</h2>
               <Field>
@@ -92,6 +104,7 @@ import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
                 <Field>
                   <label>Data</label>
                   <DateInput
+                    min={currentDate}
                     type="date"
                     name="date"
                     onChange={onChangeDate}
@@ -103,6 +116,7 @@ import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
                   <label>Duração</label>
                   <input
                     type="number"
+                    min="50"
                     name="durationInDays"
                     onChange={onChangeDurationInDays}
                     required
@@ -119,7 +133,7 @@ import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
                 ></textarea>
               </Field>
 
-              <Button onClick={handleCreate} variant="contained" color="primary">Criar</Button>
+              <Button>Criar</Button>
             </Form>
           </ContainerForm>
        </Container>

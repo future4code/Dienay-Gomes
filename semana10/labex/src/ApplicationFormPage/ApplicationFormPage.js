@@ -1,6 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 import { Container,Form, FieldGroup, Field, ContainerForm, Quit } from '../Common/Styles/ContainerStyled'
-import Button from '@material-ui/core/Button'
+import {Button} from '../Common/Styles/Button'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
@@ -12,10 +12,10 @@ function ApplicationFormPage() {
 
   const [name, setName] = useState("")
   const [age, setAge] = useState("")
-   const [country, setCountry] = useState("")
-   const [profession, setprofession] = useState("")
-   const [applicationText, setApplicationText] = useState("")
-   const [destiny, setDestiny] = useState("")
+  const [country, setCountry] = useState("")
+  const [profession, setprofession] = useState("")
+  const [applicationText, setApplicationText] = useState("")
+  const [destiny, setDestiny] = useState("")
 
    const onChangeName = event => {
      setName(event.target.value)
@@ -57,7 +57,8 @@ function ApplicationFormPage() {
     })
   }
 
-  const handleApplication = () => {
+  const handleApplication = event => {
+    event.preventDefault()
     const body = {
       "name": name,
       "age": age,
@@ -67,10 +68,10 @@ function ApplicationFormPage() {
     }
 
     axios
-    .post(`${baseUrl}/${destiny}/apply`, body )
+    .post(`${baseUrl}/trips/${destiny}/apply`, body )
     .then(response => {
       console.log(response.data)
-      console.log("deu certo")
+      history.push("/")
     })
     .catch(err => {
       console.log(err.message)
@@ -80,12 +81,15 @@ function ApplicationFormPage() {
        <Container>
             <SideBar />
            <ContainerForm>
-            <Form>
+            <Form onSubmit={handleApplication} >
               <Quit onClick={goToListTripsPage} >X</Quit>
               <h2>Informações do candidato</h2>
               <Field>
                 <label>Nome</label>
                 <input
+                  pattern={"[A-Za-z]{3,}"}
+                  title="O nome deve ter no mínimo 3 letras"
+                  required
                   type="text"
                   placeholder="João"
                   onChange={onChangeName}
@@ -96,15 +100,17 @@ function ApplicationFormPage() {
                 <Field>
                   <label>Idade</label>
                   <input
+                    required
                     type="number"
-                    placeholder="21"
+                    placeholder="18"
+                    min="18"
                     onChange={onChangeAge} 
                   />
                 </Field>
 
                 <Field>
                   <label>País</label>
-                  <Countries 
+                  <Countries
                     onChangeCountry={onChangeCountry}
                   />
                 </Field>
@@ -113,6 +119,9 @@ function ApplicationFormPage() {
               <Field>
                 <label>Profissão</label>
                 <input
+                  pattern={"[A-Za-z]{10,}"}
+                  title="Deve ter no mínimo 10 caracteres"
+                  required
                   type="text"
                   placeholder="Artista"
                   onChange={onChangeProfession} 
@@ -122,6 +131,9 @@ function ApplicationFormPage() {
               <Field>
                 <label>Porque sou um bom Candidato(a)</label>
                 <textarea
+                  required
+                  pattern={"[A-Za-z]{30,300}"}
+                  title="Deve ter no mínimo 30 caracteres"
                   placeholder="sou legal"
                   onChange={onChangeApplicationText}
                 ></textarea>
@@ -129,14 +141,15 @@ function ApplicationFormPage() {
 
               <Field>
                 <label>Destino</label>
-                <select onChange={onChangeDestiny}>
+                <select onChange={onChangeDestiny} required>
+                  <option value="" >Escolha seu destino</option>
                   {list.map(travel => {
-                    return <option value={travel.id}>{travel.name}</option>
+                    return <option key={travel.id} value={travel.id}>{travel.name}</option>
                   })}
                 </select>
               </Field>
 
-              <Button onClick={handleApplication} variant="contained" color="primary">Candidatar-se</Button>
+              <Button>Candidatar-se</Button>
             </Form>
           </ContainerForm>
        </Container>

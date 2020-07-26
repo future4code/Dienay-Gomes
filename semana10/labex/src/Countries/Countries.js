@@ -11,8 +11,9 @@ function Countries(props) {
 
   return (
     <Container>
-      <select onChange={props.onChangeCountry} name="countries" id="countries">
-            <option value="Brasil" selected="selected">Brasil</option>
+      <select onChange={props.onChangeCountry} name="countries" id="countries" required>
+            <option value="" selected="selected">Escolha se país</option>
+            <option value="Brasil" >Brasil</option>
             <option value="Afeganistão">Afeganistão</option>
             <option value="África do Sul">África do Sul</option>
             <option value="Albânia">Albânia</option>

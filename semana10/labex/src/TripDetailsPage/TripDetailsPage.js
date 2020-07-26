@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { ListTrips, Item, CardDetail, Details, Quit } from './styled'
-import { Container } from '../Common/Styles/ContainerStyled'
+import { ListTrips, Item, CardDetail, Details, Applications } from './styled'
+import { Container, Quit } from '../Common/Styles/ContainerStyled'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
-import { baseUrl, token, axiosConfig} from '../Common/CommonConst'
+import { baseUrl, axiosConfig} from '../Common/CommonConst'
+import {Button} from '../Common/Styles/Button'
  
 function TripDetailsPage() {
   const [list, setList] = useState("")
   const [detailTrip, setDetailTrip] = useState({})
   const [candidates, setCandidates] = useState([])
+  const [approved, setApproved] = useState([])
+  const [tripId, setTripId] = useState("")
 
   const [showCard, setShowCard] = useState(false)
 
@@ -18,6 +21,8 @@ function TripDetailsPage() {
   useEffect(() => {
     getListTrips()
   },[])
+
+  const token = window.localStorage.getItem("token")
 
   useEffect(() => {
     if (token === null) {
@@ -37,11 +42,13 @@ function TripDetailsPage() {
   }
 
   const getTripToDetail = (idTrip) => {
+    setTripId(idTrip)
     axios
     .get(`${baseUrl}/trip/${idTrip}`, axiosConfig)
     .then(response => {
       setDetailTrip(response.data.trip)
       setCandidates(response.data.trip.candidates)
+      setApproved(response.data.trip.approved)
     })
     .catch(err => {
       console.log(err.message)
@@ -52,6 +59,21 @@ function TripDetailsPage() {
 
   const cardShowHide = () =>{
     setShowCard(!showCard)
+  }
+
+  const handleDecide = (humanId, option) => {
+    const body = {
+      "approve": option
+    }
+
+    axios
+    .put(`${baseUrl}/trips/${tripId}/candidates/${humanId}/decide`, body, axiosConfig)
+    .then(response => {
+      console.log(response.data)
+    })
+    .catch(err => {
+      console.log(err.message)
+    })
   }
 
    return (
@@ -87,12 +109,31 @@ function TripDetailsPage() {
         :
         <CardDetail>
           <Details>
-            <Quit onClick={cardShowHide}>Voltar</Quit>
             <h2>{detailTrip.name}</h2>
             <p>Planeta: {detailTrip.planet}</p>
             <p>Data: {detailTrip.date}</p>
             <p>Duração em dias: {detailTrip.durationInDays}</p>
             <p>Descrição: {detailTrip.description}</p>
+            <div>
+              <h3>Aprovados</h3>
+              <ul>
+                {approved.map(candidate => {
+                  return (
+                    <li>
+                      <p>Nome: {candidate.name}</p>
+                      <p>Idade: {candidate.age}</p>
+                      <p>Profissão: {candidate.profession}</p>
+                      <p>País: {candidate.country}</p>
+                      <p>Bio: {candidate.applicationText}</p>
+                    </li>
+                  )
+                })}
+              </ul>
+            </div>
+          </Details>
+          <Applications>
+          <Quit onClick={cardShowHide}>Voltar</Quit>
+            <h2>Aplicações</h2>
             <ul>
               {candidates.map(human => {
                 return (
@@ -102,13 +143,13 @@ function TripDetailsPage() {
                   <p>Profissão: {human.profession}</p>
                   <p>País: {human.country}</p>
                   <p>Bio: {human.applicationText}</p>
-                  <button>Confirmar</button>
-                  <button>Recusar</button>
+                  <Button onClick={() => handleDecide(human.id, true)}>Confirmar</Button>
+                  <Button onClick={() => handleDecide(human.id, false)}>Recusar</Button>
                 </li>
                 )
               })}
             </ul>
-          </Details>
+          </Applications>
         </CardDetail>
         }</>
       }

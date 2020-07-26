@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { ContainerLogin } from './styled'
 import { Quit } from '../Common/Styles/ContainerStyled'
-import Button from '@material-ui/core/Button'
+import {Button} from '../Common/Styles/Button'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { baseUrl } from '../Common/CommonConst'
-
 
  function LoginPage() {
    const [email, setEmail] = useState("")
@@ -20,7 +19,8 @@ import { baseUrl } from '../Common/CommonConst'
      setPassword(event.target.value)
    }
 
-   const handleLogin = () => {
+   const handleLogin = event => {
+    event.preventDefault()
      const body = {
        email: email,
        password: password
@@ -46,10 +46,24 @@ import { baseUrl } from '../Common/CommonConst'
         <div>
           <Quit onClick={goToHomePage} >X</Quit>
           <h2>Login</h2>
-          <form>
-            <input value={email} onChange={onChangeEmail} type="email" placeholder="usuário/e-mail" />
-            <input value={password} onChange={onChangePassword} type="password" placeholder="senha" />
-            <Button onClick={handleLogin} variant="contained" color="primary">Entrar</Button>
+          <form onSubmit={handleLogin}>
+            <input
+              value={email}
+              onChange={onChangeEmail}
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              required
+            />
+            <input
+              value={password}
+              onChange={onChangePassword}
+              type="password"
+              name="password"
+              placeholder="senha"
+              required
+            />
+            <Button>Entrar</Button>
           </form>
         </div>
     </ContainerLogin>

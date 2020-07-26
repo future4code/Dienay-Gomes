@@ -39,7 +39,7 @@ export const CardDetail = styled.div`
 
     ul {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
         padding: 16px;
     }
@@ -52,17 +52,17 @@ export const CardDetail = styled.div`
     }
 `
 export const Details = styled.div`
-    border-radius: 8px;
+    border-right: 1px solid rgba(72, 76, 173, .5);
     display: flex;
     flex-direction: column;
     padding: 8px 32px;
-    position: relative;
-    width: 100%;
+    width: 50%;
 `
 
-export const Quit = styled.span`
-    cursor: pointer;
-    position: absolute;
-    right: 8px;
-    top: 8px;
+export const Applications = styled.div`
+    padding:  8px 32px;
+    position: relative;
+    width: 50%;
+
+    
 `
