@@ -6,10 +6,11 @@ import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
 import { baseUrl, axiosConfig} from '../Common/CommonConst'
 import {Button} from '../Common/Styles/Button'
+import Load from '../Common/Load';
  
 function TripDetailsPage() {
   const [list, setList] = useState("")
-  const [detailTrip, setDetailTrip] = useState({})
+  const [detailTrip, setDetailTrip] = useState("")
   const [candidates, setCandidates] = useState([])
   const [approved, setApproved] = useState([])
   const [tripId, setTripId] = useState("")
@@ -85,7 +86,7 @@ function TripDetailsPage() {
     <Container>
       <SideBar />
       {list === "" ?
-       <div>...Carregando</div>
+       <Load />
       :<>
       {showCard === false ?
         <ListTrips>
@@ -112,7 +113,11 @@ function TripDetailsPage() {
           </ul>
         </ListTrips>
         :
-        <CardDetail>
+        <>
+          {detailTrip === "" ?
+            <Load />
+          :
+            <CardDetail>
           <Details>
             <Quit onClick={cardShowHide}>Voltar</Quit>
             <h2>{detailTrip.name}</h2>
@@ -175,6 +180,8 @@ function TripDetailsPage() {
             </Applications>
           </CandidatesList>
         </CardDetail>
+          }
+        </>
         }</>
       }
     </Container>

@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
 import { baseUrl } from '../Common/CommonConst'
+import Load from '../Common/Load';
 
 function ListTripsPage() {
   const [list, setList] = useState("")
@@ -53,7 +54,7 @@ function ListTripsPage() {
     <Container>
       <SideBar />
       {list === "" ?
-       <div>...Carregando</div>
+       <Load />
       :<>
       {showCard === false ?
         <ListTrips>
