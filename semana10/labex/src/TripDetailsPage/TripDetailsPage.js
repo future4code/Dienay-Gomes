@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ListTrips, Item, CardDetail, Details, Applications } from './styled'
+import { ListTrips, Item, CardDetail, Details, CandidatesList, Approved, Applications } from './styled'
 import { Container, Quit } from '../Common/Styles/ContainerStyled'
 import { useHistory } from 'react-router-dom';
 import axios from 'axios'
@@ -69,7 +69,12 @@ function TripDetailsPage() {
     axios
     .put(`${baseUrl}/trips/${tripId}/candidates/${humanId}/decide`, body, axiosConfig)
     .then(response => {
-      console.log(response.data)
+      if (option === true) {
+        alert("Candidato aprovado")
+      } else {
+        alert("Candidato reprovado")
+      }
+      setShowCard(!showCard)
     })
     .catch(err => {
       console.log(err.message)
@@ -109,47 +114,66 @@ function TripDetailsPage() {
         :
         <CardDetail>
           <Details>
+            <Quit onClick={cardShowHide}>Voltar</Quit>
             <h2>{detailTrip.name}</h2>
             <p>Planeta: {detailTrip.planet}</p>
             <p>Data: {detailTrip.date}</p>
             <p>Duração em dias: {detailTrip.durationInDays}</p>
             <p>Descrição: {detailTrip.description}</p>
-            <div>
-              <h3>Aprovados</h3>
+          </Details>
+          <CandidatesList>
+            <Approved>
+                <h3>Aprovados</h3>
+                <ul>
+                  {approved.map(candidate => {
+                    return (
+                      <li>
+                        <div>
+                          <p>Nome</p>
+                          <div>{candidate.name}</div>
+                        </div>
+                        <div>
+                          <p>Idade</p>
+                          <div>{candidate.age}</div>
+                        </div>
+                        <div>
+                          <p>Profissão</p>
+                          <div>{candidate.profession}</div>
+                        </div>
+                        <div>
+                          <p>País</p>
+                          <div>{candidate.country}</div>
+                        </div>
+                        <div>
+                          <p>Bio</p>
+                          <div>{candidate.applicationText}</div>
+                        </div>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </Approved>
+            <Applications>
+              <h3>Aplicações</h3>
               <ul>
-                {approved.map(candidate => {
+                {candidates.map(human => {
                   return (
-                    <li>
-                      <p>Nome: {candidate.name}</p>
-                      <p>Idade: {candidate.age}</p>
-                      <p>Profissão: {candidate.profession}</p>
-                      <p>País: {candidate.country}</p>
-                      <p>Bio: {candidate.applicationText}</p>
-                    </li>
+                  <li>
+                    <p>Nome: {human.name}</p>
+                    <p>Idade: {human.age}</p>
+                    <p>Profissão: {human.profession}</p>
+                    <p>País: {human.country}</p>
+                    <p>Bio: {human.applicationText}</p>
+                    <div>
+                      <Button onClick={() => handleDecide(human.id, true)}>Confirmar</Button>
+                      <Button onClick={() => handleDecide(human.id, false)}>Recusar</Button>
+                    </div>
+                  </li>
                   )
                 })}
               </ul>
-            </div>
-          </Details>
-          <Applications>
-          <Quit onClick={cardShowHide}>Voltar</Quit>
-            <h2>Aplicações</h2>
-            <ul>
-              {candidates.map(human => {
-                return (
-                <li>
-                  <p>Nome: {human.name}</p>
-                  <p>Idade: {human.age}</p>
-                  <p>Profissão: {human.profession}</p>
-                  <p>País: {human.country}</p>
-                  <p>Bio: {human.applicationText}</p>
-                  <Button onClick={() => handleDecide(human.id, true)}>Confirmar</Button>
-                  <Button onClick={() => handleDecide(human.id, false)}>Recusar</Button>
-                </li>
-                )
-              })}
-            </ul>
-          </Applications>
+            </Applications>
+          </CandidatesList>
         </CardDetail>
         }</>
       }

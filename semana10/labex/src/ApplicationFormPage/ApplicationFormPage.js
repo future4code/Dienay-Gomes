@@ -6,35 +6,25 @@ import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
 import Countries from '../Countries/Countries';
 import { baseUrl } from '../Common/CommonConst'
+import useForm from '../Hooks/useForm'
 
 function ApplicationFormPage() {
   const [list, setList] = useState([])
 
-  const [name, setName] = useState("")
-  const [age, setAge] = useState("")
-  const [country, setCountry] = useState("")
-  const [profession, setprofession] = useState("")
-  const [applicationText, setApplicationText] = useState("")
-  const [destiny, setDestiny] = useState("")
+  const { form, onChange } = useForm({
+    name: "",
+    age: "",
+    country: "",
+    profession: "",
+    applicationText: "",
+    destiny: ""
+  })
 
-   const onChangeName = event => {
-     setName(event.target.value)
-   }
-   const onChangeAge = event => {
-    setAge(event.target.value)
-   }
-   const onChangeCountry = event => {
-    setCountry(event.target.value)
-   }
-   const onChangeProfession = event => {
-    setprofession(event.target.value)
-   }
-   const onChangeApplicationText = event => {
-    setApplicationText(event.target.value)
-   }
-   const onChangeDestiny = event => {
-    setDestiny(event.target.value)
-   }
+   const handleInputChange = event => {
+     const { name, value } = event.target
+     
+     onChange(name, value)
+    }
 
   const history = useHistory()
 
@@ -60,15 +50,15 @@ function ApplicationFormPage() {
   const handleApplication = event => {
     event.preventDefault()
     const body = {
-      "name": name,
-      "age": age,
-      "country": country,
-      "profession": profession,
-      "applicationText": applicationText
+      "name": form.name,
+      "age": form.age,
+      "country": form.country,
+      "profession": form.profession,
+      "applicationText": form.applicationText
     }
 
     axios
-    .post(`${baseUrl}/trips/${destiny}/apply`, body )
+    .post(`${baseUrl}/trips/${form.destiny}/apply`, body )
     .then(response => {
       console.log(response.data)
       history.push("/")
@@ -87,12 +77,14 @@ function ApplicationFormPage() {
               <Field>
                 <label>Nome</label>
                 <input
+                  name="name"
+                  onChange={handleInputChange}
                   pattern={"[A-Za-z]{3,}"}
-                  title="O nome deve ter no mínimo 3 letras"
-                  required
-                  type="text"
                   placeholder="João"
-                  onChange={onChangeName}
+                  required
+                  title="O nome deve ter no mínimo 3 letras"
+                  type="text"
+                  value={form.name}
                 />
               </Field>
 
@@ -100,18 +92,22 @@ function ApplicationFormPage() {
                 <Field>
                   <label>Idade</label>
                   <input
+                    name="age"
+                    min="18"
+                    onChange={handleInputChange} 
+                    placeholder="18"
                     required
                     type="number"
-                    placeholder="18"
-                    min="18"
-                    onChange={onChangeAge} 
+                    value={form.age}
                   />
                 </Field>
 
                 <Field>
                   <label>País</label>
                   <Countries
-                    onChangeCountry={onChangeCountry}
+                    name="country"
+                    onChangeCountry={handleInputChange}
+                    value={form.country}
                   />
                 </Field>
               </FieldGroup>
@@ -119,29 +115,34 @@ function ApplicationFormPage() {
               <Field>
                 <label>Profissão</label>
                 <input
-                  pattern={"[A-Za-z]{10,}"}
-                  title="Deve ter no mínimo 10 caracteres"
+                  name="profession"
+                  onChange={handleInputChange} 
+                  pattern={"[^.]{10,}"}
+                  placeholder="Artista"
                   required
                   type="text"
-                  placeholder="Artista"
-                  onChange={onChangeProfession} 
+                  title="Deve ter no mínimo 10 caracteres"
+                  value={form.profession}
                 />
               </Field>
               
               <Field>
                 <label>Porque sou um bom Candidato(a)</label>
-                <textarea
-                  required
-                  pattern={"[A-Za-z]{30,300}"}
-                  title="Deve ter no mínimo 30 caracteres"
+                <input
+                  name="applicationText"
+                  onChange={handleInputChange}
+                  pattern={"[^.]{30,}"}
                   placeholder="sou legal"
-                  onChange={onChangeApplicationText}
-                ></textarea>
+                  required
+                  type="textarea"
+                  title="Deve ter no mínimo 30 caracteres"
+                  value={form.applicationText}
+                />
               </Field>
 
               <Field>
                 <label>Destino</label>
-                <select onChange={onChangeDestiny} required>
+                <select onChange={handleInputChange} required name="destiny" value={form.destiny}>
                   <option value="" >Escolha seu destino</option>
                   {list.map(travel => {
                     return <option key={travel.id} value={travel.id}>{travel.name}</option>

@@ -1,15 +1,12 @@
 import { useState } from "react";
 
-const useInput = estadoInicial => {
-  const [valor, atualizaValor] = useState(estadoInicial)
+const useForm = initialValues => {
+  const [form, setForm] = useState(initialValues)
+  const onChange = (name, value) => {
+    const newForm = { ...form, [name]: value }
+    setForm(newForm)
+  }
+  return { form, onChange }
+}
 
-  const lidaAtualizaValor = event => {
-    const { value } = event.target
-
-    atualizaValor(value);
-  };
-
-  return [valor, lidaAtualizaValor]
-};
-
-export default useInput
+export default useForm

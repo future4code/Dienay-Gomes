@@ -7,14 +7,6 @@ export const Container = styled.div`
     grid-template-columns: 1fr 5fr;
     height: 100vh;
 
-    sidebar {
-        background-color: #484CAD;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
     button {
         margin-bottom: 16px;
     }
@@ -22,10 +14,16 @@ export const Container = styled.div`
 
 export const ContainerSideBar = styled.div`
     background-color: #484CAD;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
+
+    > div {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+    }
+
 `
 
 //estilo genérico dos formulários maiores

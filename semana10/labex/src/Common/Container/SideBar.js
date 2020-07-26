@@ -39,25 +39,27 @@ function SideBar() {
 
   return (
     <ContainerSideBar>
-      <Button onClick={goToHomePage} color="secondary" >Home</Button>
+      <div>
+        <Button onClick={goToHomePage} color="secondary" >Home</Button>
 
-      {loginLogout === false ?
-        <Button onClick={goToListTripsPage} color="secondary" >Viagens</Button>
-      :
-        <Button onClick={goToTripDetailsPage} color="secondary" >Detalhe de viagens</Button>
-      }
-      
-      {loginLogout === false ?
-        <Button onClick={goToApplicationFormPage} color="secondary" >Candidatar-se</Button>
-      :
-        <Button onClick={goToCreatePage} color="secondary" >Criar Viagem</Button>
-      }
+        {loginLogout === false ?
+          <Button onClick={goToListTripsPage} color="secondary" >Viagens</Button>
+        :
+          <Button onClick={goToTripDetailsPage} color="secondary" >Detalhe de viagens</Button>
+        }
 
-      {loginLogout === false ?
-        <Button onClick={goToLoginPage} color="secondary" >Login</Button>
-      :
-        <Button onClick={handleLogout} color="secondary" >Logout</Button>
-      }
+        {loginLogout === false ?
+          <Button onClick={goToApplicationFormPage} color="secondary" >Candidatar-se</Button>
+        :
+          <Button onClick={goToCreatePage} color="secondary" >Criar Viagem</Button>
+        }
+
+        {loginLogout === false ?
+          <Button onClick={goToLoginPage} color="secondary" >Login</Button>
+        :
+          <Button onClick={handleLogout} color="secondary" >Logout</Button>
+        }
+      </div>
     </ContainerSideBar>
   )
 }

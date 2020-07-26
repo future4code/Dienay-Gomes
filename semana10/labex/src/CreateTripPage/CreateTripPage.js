@@ -6,14 +6,26 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios'
 import SideBar from '../Common/Container/SideBar';
 import { baseUrl, axiosConfig} from '../Common/CommonConst'
- 
+import useForm from '../Hooks/useForm'
+
+
  function CreateTripPage() {
-   const [name, setName] = useState("")
-   const [planet, setPlanet] = useState("")
    const [date, setDate] = useState("")
-   const [description, setDescription] = useState("")
-   const [durationInDays, setDurationInDays] = useState("")
    
+   const { form, onChange } = useForm({
+    name: "",
+    planet: "",
+    date: "",
+    description: "",
+    durationInDays: ""
+    })
+   
+   const handleInputChange = event => {
+     const { name, value } = event.target
+     
+     onChange(name, value)
+    }
+
    const [currentDate, setCurrentDate] = useState("")
    useEffect (() => {
       const data = new Date(),
@@ -23,26 +35,13 @@ import { baseUrl, axiosConfig} from '../Common/CommonConst'
       return setCurrentDate(year+"-"+month+"-"+day)
    },[])
 
-   const onChangeName = event => {
-     setName(event.target.value)
-   }
-   const onChangePlanet = event => {
-    setPlanet(event.target.value)
-   }
-   const onChangeDate = event => {
-    const date = new Date(event.target.value),
+   useEffect (() => {
+    const date = new Date(form.date),
      day  = (date.getDate()+1).toString().padStart(2, '0'),
      month  = (date.getMonth()+1).toString().padStart(2, '0'),
      year  = date.getYear() - 100
      return setDate(day+"/"+month+"/"+year)
-   }
-
-   const onChangeDescription = event => {
-    setDescription(event.target.value)
-   }
-   const onChangeDurationInDays = event => {
-    setDurationInDays(event.target.value)
-   }
+   },[form.date])
 
    const history = useHistory()
 
@@ -57,11 +56,11 @@ import { baseUrl, axiosConfig} from '../Common/CommonConst'
    const handleCreate = event => {
     event.preventDefault()
     const body = {
-      "name": name,
-      "planet": planet,
+      "name": form.name,
+      "planet": form.planet,
       "date": date,
-      "description": description,
-      "durationInDays": durationInDays
+      "description": form.description,
+      "durationInDays": form.durationInDays
     }
 
     axios
@@ -83,20 +82,22 @@ import { baseUrl, axiosConfig} from '../Common/CommonConst'
               <Field>
                 <label>Nome</label>
                 <input
-                  type="text"
                   name="name"
-                  onChange={onChangeName}
+                  onChange={handleInputChange}
                   required
+                  type="text"
+                  value={form.name}
                 />
               </Field>
 
               <Field>
                 <label>Planeta</label>
                 <input
-                  type="text"
                   name="planet"
-                  onChange={onChangePlanet}
+                  onChange={handleInputChange}
                   required
+                  type="text"
+                  value={form.planet}
                 />
               </Field>
 
@@ -104,22 +105,24 @@ import { baseUrl, axiosConfig} from '../Common/CommonConst'
                 <Field>
                   <label>Data</label>
                   <DateInput
-                    min={currentDate}
-                    type="date"
                     name="date"
-                    onChange={onChangeDate}
+                    min={currentDate}
+                    onChange={handleInputChange}
                     required
+                    type="date"
+                    value={form.date}
                   />
                 </Field>
                 
                 <Field>
                   <label>Duração</label>
                   <input
-                    type="number"
-                    min="50"
                     name="durationInDays"
-                    onChange={onChangeDurationInDays}
+                    min="50"
+                    onChange={handleInputChange}
                     required
+                    type="number"
+                    value={form.durationInDays}
                   />
                 </Field>
               </FieldGroup>
@@ -128,8 +131,9 @@ import { baseUrl, axiosConfig} from '../Common/CommonConst'
                 <label>Descrição</label>
                 <textarea
                   name="description"
-                  onChange={onChangeDescription}
+                  onChange={handleInputChange}
                   required
+                  value={form.description}
                 ></textarea>
               </Field>
 

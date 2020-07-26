@@ -1,29 +1,28 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { ContainerLogin } from './styled'
 import { Quit } from '../Common/Styles/ContainerStyled'
 import {Button} from '../Common/Styles/Button'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 import { baseUrl } from '../Common/CommonConst'
+import useForm from '../Hooks/useForm'
 
  function LoginPage() {
-   const [email, setEmail] = useState("")
-   const [password, setPassword] =useState("")
+   const { form, onChange } = useForm({ email: "", password: ""})
+   
+   const handleInputChange = event => {
+     const { name, value } = event.target
+     
+     onChange(name, value)
+    }
+
    const history = useHistory()
-
-   const onChangeEmail = event => {
-     setEmail(event.target.value)
-   }
-
-   const onChangePassword = event => {
-     setPassword(event.target.value)
-   }
 
    const handleLogin = event => {
     event.preventDefault()
      const body = {
-       email: email,
-       password: password
+       email: form.email,
+       password: form.password
      }
 
      axios
@@ -48,16 +47,16 @@ import { baseUrl } from '../Common/CommonConst'
           <h2>Login</h2>
           <form onSubmit={handleLogin}>
             <input
-              value={email}
-              onChange={onChangeEmail}
+              value={form.email}
+              onChange={handleInputChange}
               type="email"
               name="email"
               placeholder="E-mail"
               required
             />
             <input
-              value={password}
-              onChange={onChangePassword}
+              value={form.password}
+              onChange={handleInputChange}
               type="password"
               name="password"
               placeholder="senha"
