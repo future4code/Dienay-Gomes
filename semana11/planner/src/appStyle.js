@@ -13,10 +13,9 @@ export const Container = styled.div`
     margin-top: 8px;
     text-align: center;
   }
-`
 
-export const Header = styled.header`
-  div {
-      text-align: center;
+  span {
+    cursor: pointer;
   }
 `
+
