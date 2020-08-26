@@ -14,24 +14,32 @@ const allEvents: event[] = [
 	{
 		name: "Reunião",
 		description: "Reunião muito importante",
-		startAt: moment("25/06/2020 15:00", "DD/MM/YYYY HH:mm"),
-	 	finishAt: moment("25/06/2020 16:00", "DD/MM/YYYY HH:mm")
+		startAt: moment("25/12/2020 15:00", "DD/MM/YYYY HH:mm"),
+	 	finishAt: moment("25/12/2020 16:00", "DD/MM/YYYY HH:mm")
 	},
 	{
 		name: "Reuniãozinha",
 		description: "Reunião não muito importante",
-		startAt: moment("26/06/2020 17:00", "DD/MM/YYYY HH:mm"),
-	 	finishAt: moment("26/06/2020 18:00", "DD/MM/YYYY HH:mm")
+		startAt: moment("26/11/2020 17:00", "DD/MM/YYYY HH:mm"),
+	 	finishAt: moment("28/11/2020 18:00", "DD/MM/YYYY HH:mm")
 	}
 ]
 
 function getAllEvents(allEvents: event[]):void {
     for (let event of allEvents ) {
+        const duration = event.finishAt.diff(event.startAt, "minutes")
+
+        const today = moment()
+        const daysUntilEvent = event.startAt.diff(today, "days")
+
         console.log(`
             Nome: ${event.name}
             Horário de início: ${event.startAt.format('dddd[,] DD [de] MMMM [de] YYYY, HH:mm')}
             Horário de fim: ${event.finishAt.format('dddd[,] DD [de] MMMM [de] YYYY, HH:mm')}
-            Descrição: ${event.description}`)
+            Descrição: ${event.description}
+            Duração: ${duration} minutos
+            Dias até o evento: ${daysUntilEvent}
+        `)
     }
 }
 
