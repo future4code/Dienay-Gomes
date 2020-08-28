@@ -1,0 +1,41 @@
+[
+  {
+    "id": 1,
+    "name": "Dienay Lima",
+    "age": 29,
+    "cpf": "000.000.000-00",
+    "balance": 0,
+    "spending": [
+      {
+        "deposit": {
+          "price": 0,
+          "date": 1547517600,
+          "description": "cumida"
+        }
+      },
+      {
+        "withdrawal": {
+          "price": 0,
+          "date": 1547517600,
+          "description": "cumida"
+        }
+      }
+    ]
+  },
+  {
+    "id": 1598638250063,
+    "name": "Farias Lima",
+    "age": 19,
+    "cpf": 55566644432,
+    "balance": 0,
+    "spending": []
+  },
+  {
+    "id": 1598638294666,
+    "name": "Augusto",
+    "age": 25,
+    "cpf": 55566544432,
+    "balance": 0,
+    "spending": []
+  }
+]
