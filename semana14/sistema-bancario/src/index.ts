@@ -1,4 +1,5 @@
 import * as fs from 'fs'
+import moment from 'moment'
 
 export function readDatabase(): any {
   try {
@@ -18,3 +19,12 @@ export function writeToDatabase(data: any): void {
     console.log("Erro ao salvar os dados: " + error.message)
   }
 }
+
+export function idade(nacimento: string):any {
+    const today = moment()
+    const dateBirth = moment(nacimento, "DD/MM/YYYY")
+    const diffInYears = today.diff(dateBirth, "years")
+    return diffInYears
+}
+
+//console.log(idade("23/12/2000"))

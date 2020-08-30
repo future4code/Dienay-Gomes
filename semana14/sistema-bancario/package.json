@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "ts-node ./src/index.ts",
+    "createAccount": "ts-node ./src/createAccount.ts",
+    "getAllAccounts": "ts-node ./src/getAllAccounts.ts",
     "build": "tsc && node ./build/index.js"
   },
   "author": "",
