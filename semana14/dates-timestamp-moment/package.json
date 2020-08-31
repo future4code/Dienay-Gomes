@@ -1,0 +1,16 @@
+{
+  "name": "aula-node-dates",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./build/index.js"
+  },
+  "author": "Dienay Lima",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "13.7.7",
+    "moment": "^2.27.0",
+    "typescript": "^3.8.3"
+  }
+}
