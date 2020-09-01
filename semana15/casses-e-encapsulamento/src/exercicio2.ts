@@ -1,3 +1,5 @@
+import { FileManager } from './FileManager'
+
 class Transaction {
     private date: string;
     private value: number;
@@ -8,16 +10,36 @@ class Transaction {
       this.value = value;
       this.description = description
     }
+
+    getDate():string {
+        return this.date
+    }
+    getValue():number {
+        return this.value
+    }
+    getDescription():string {
+        return this.description
+    }
   }
 
-  
+  const transactions: Transaction = new Transaction(
+    "25/08/2020",
+    100,
+    "comprar coisas"
+)
+
+console.log(transactions.getDate())
 
 class UserAccount {
     private cpf: string;
     private name: string;
     private age: number;
     private balance: number = 0;
-    private transactions: Transaction[] = [];
+    private transactions: Transaction = new Transaction(
+        "25/08/2020",
+        100,
+        "comprar coisas"
+    );
   
     constructor(
        cpf: string,
@@ -29,6 +51,20 @@ class UserAccount {
        this.name = name;
        this.age = age;
     }
+
+    getCpf():string {
+        return this.cpf
+    }
+    getName():string {
+        return this.name
+    }
+    getAge():number {
+        return this.age
+    }
+    getBalance():number {
+        return this.balance
+    }
+
   }
 
 const User: UserAccount = new UserAccount(
@@ -37,4 +73,4 @@ const User: UserAccount = new UserAccount(
    29
 )
 
-console.log(User)
+console.log(User.getName())
