@@ -1,12 +1,8 @@
-//Exercício 6
-//a. apenas uma vez
-//b. getAdmissionDate e getBaseSalary
+//Exercício 8
 import { Employee } from "./exercicio6"
 
 export class Seller extends Employee{
-    protected admissionDate: string
-    protected baseSalary: number
-
+// a.
     constructor(
         id: string,
         email: string,
@@ -15,33 +11,17 @@ export class Seller extends Employee{
         admissionDate: string,
         baseSalary: number
     ) {
-        super(id, email, name, password)
-        this.admissionDate = admissionDate
-        this.baseSalary = baseSalary
-    }
-
-    public getAdmissionDate(): string {
-		return this.admissionDate
-	}
-
-	public getBaseSalary(): number {
-		return this.baseSalary
-    }
-    
-    public calculateTotalSalary(): number {
-        return this.baseSalary + 400
+        super(id, email, name, password, admissionDate, baseSalary)
     }
 }
 
-const employee: Employee =new Employee(
+const seller: Seller = new Seller(
     "1",
     "dienay@gmail.com",
     "Dienay",
-    "1234556",
-    "23/01/2020",
+    "1234455",
+    "12/05/2020",
     4000
 )
 
-console.log("Admissão: ", employee.getAdmissionDate())
-console.log("Base salarial: ", employee.getBaseSalary())
-console.log("Salário com benefícios: ", employee.calculateTotalSalary())
+console.log(seller)
