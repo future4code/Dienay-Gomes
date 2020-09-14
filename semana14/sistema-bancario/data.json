@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Dienay Lima",
+    "birth": "12/01/1991",
+    "cpf": "000.000.000-00",
+    "balance": 0,
+    "spending": [
+      {
+        "deposit": {
+          "price": 0,
+          "date": 1547517600,
+          "description": "cumida"
+        }
+      },
+      {
+        "withdrawal": {
+          "price": 0,
+          "date": 1547517600,
+          "description": "cumida"
+        }
+      }
+    ]
+  },
+  {
+    "id": 1598638250063,
+    "name": "Farias Lima",
+    "birth": "21/12/1999",
+    "cpf": "555.366.444-32",
+    "balance": 0,
+    "spending": []
+  },
+  {
+    "id": 1598638294666,
+    "name": "Augusto",
+    "birth": "09/01/2000",
+    "cpf": "555.665.448-32",
+    "balance": 0,
+    "spending": []
+  },
+  {
+    "id": "2020-08-28T20:20:29.335Z",
+    "name": "Francisco",
+    "birth": "12/05/1990",
+    "cpf": "555.665.444-32",
+    "balance": 0,
+    "spending": []
+  },
+  {
+    "id": "2020-08-30T20:13:26.607Z",
+    "name": "Francisco",
+    "birth": "23/06/2000",
+    "cpf": "555.665.414-32",
+    "balance": 0,
+    "spending": []
+  },
+  {
+    "id": "2020-08-30T20:37:05.143Z",
+    "name": "Tico",
+    "birth": "23/06/2000",
+    "cpf": "545.665.414-32",
+    "balance": 0,
+    "spending": []
+  }
+]
