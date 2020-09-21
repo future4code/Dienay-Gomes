@@ -37,4 +37,25 @@ export class UserBusiness {
             throw new Error( error.message || "Error creating user. Please check your system administrator.");
         }
     }
+
+    async getUserByEmail(user:any) {
+        
+        const userDatabase = new UserDatabase();
+        const userFromDB = await userDatabase.getUserByEmail(user.email);
+        
+
+        const hashManager = new HashManager();
+        const hashCompare = await hashManager.compare(user.password, userFromDB.password);
+        
+        const authenticator = new Authenticator();
+        const accessToken = authenticator.generateToken({ id: userFromDB.id });
+        
+
+        if (!hashCompare) {
+            throw new Error("Invalid Password!");
+        }
+
+        return accessToken;
+    }
+    
 }
