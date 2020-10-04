@@ -10,7 +10,6 @@ export class BandBusiness {
     constructor(
         private bandDatabase: BandDatabase,
         private idGenerator: IdGenerator,
-        private hashManager: HashManager ,
         private authenticator: Authenticator
      ){}
 
@@ -24,18 +23,6 @@ export class BandBusiness {
     }
 
     async get(token:string){
-        const authenticator = new Authenticator();
-        const authenticationData = authenticator.verify(token);
-        const userId = authenticationData.id;
-
-        const feedDatabase = new FeedDatabase();
-        const feed = await feedDatabase.getFeed(userId);
-        const mappedFeed = feed.map((item:any)=>({
-            title: item.title,
-            photoPost: item.photoPost,
-            description: item.description
-        }))
-
-        return mappedFeed
+        this.authenticator.getData(token)
     }
 }

@@ -15,7 +15,6 @@ export class BandController {
     private static bandBusiness = new BandBusiness(
         new BandDatabase(),
         new IdGenerator(),
-        new HashManager(),
         new Authenticator()
      );
 
@@ -24,15 +23,18 @@ export class BandController {
 
             const token = req.headers.authorization as string;
             await BandController.bandBusiness.get(token)
+            
             const input: BandInputDTO = {
                 name: req.body.name,
                 music_genre: req.body.music_genre,
                 responsible: req.body.responsible
             }
 
-            await 
+            await BandController.bandBusiness.addBand(input)
 
-            res.status(200).send({ token });
+            res.status(200).send({ 
+                message: "Banda registada com sucesso"
+             });
 
         } catch (error) {
             res.status(400).send({ error: error.message });

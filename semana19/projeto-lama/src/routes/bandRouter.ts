@@ -2,8 +2,8 @@ import express from "express";
 import { BandController } from "../controller/BandController";
 
 
-export const userRouter = express.Router();
+export const bandRouter = express.Router();
 
 const bandController = new BandController();
 
-userRouter.post("/addband", bandController.addBand);
+bandRouter.post("/addband", bandController.addBand);
