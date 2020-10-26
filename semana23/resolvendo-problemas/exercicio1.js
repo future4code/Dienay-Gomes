@@ -12,12 +12,6 @@ var isOneEdit = function (stringA, stringB) {
     if ((bigger - smaller) > 1) {
         return false;
     }
-    // if(stringA.length > stringB.length) {
-    //     return stringA.includes(stringB)
-    // }
-    // if(stringB.length > stringA.length) {
-    //     return stringB.includes(stringA)
-    // }
     var count = 0;
     for (var i = 0; i < bigger; i++) {
         if (stringA[i] !== stringB[i]) {
