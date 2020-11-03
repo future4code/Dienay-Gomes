@@ -1,5 +1,5 @@
-var entrada1 = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+export const entrada1 = [
+    1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
     11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
     21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
     31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
@@ -10,8 +10,8 @@ var entrada1 = [
     81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
     91, 92, 93, 94, 95, 96, 97, 98, 99, 100
 ];
-var entrada2 = [
-    1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+const entrada2 = [
+    1,  2,  3,  4,  5,  6,  7,  8,  9, 10,
     11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
     21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
     31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
@@ -22,17 +22,17 @@ var entrada2 = [
     81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
     91, 92, 93, 94, 95, 96, 97, 98, 99, 100
 ];
-var numeroFaltante = function (array) {
-    var faltante = 1;
-    for (var _i = 0, array_1 = array; _i < array_1.length; _i++) {
-        var num = array_1[_i];
-        if (num === faltante) {
-            faltante++;
-        }
-        else {
-            return num - 1;
+
+export const numeroFaltante = (array: number[]): number | undefined => {
+    let faltante = 1
+    for(let num of array) {
+        if(num === faltante) {
+            faltante++
+        } else {
+            return num - 1  
         }
     }
-};
-console.log(numeroFaltante(entrada1));
-console.log(numeroFaltante(entrada2));
+}
+
+// console.log(numeroFaltante(entrada1))
+// console.log(numeroFaltante(entrada2))
